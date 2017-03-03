@@ -7,14 +7,7 @@
     
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="jquery-3.1.1.min.js"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/components/label.css">
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/components/container.css"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/components/button.min.css"></script>
+
   <style type="text/css">
     #circle{
      
@@ -42,12 +35,42 @@ font-family: "Times New Roman", Georgia, Serif;
   float: left;
 }
 .text{
-  text-align: center;
+  left: 2px;
+  text-align:center;
 }
+h5
+{
+  text-align: center;-
+}
+img
+{
+  float:right;
+}
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 70%;
+    float:top;
+float: right;
+  }
 
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+     }
+  .container {
+    padding: 2px 16px;
+    }
+    table{
 
+    }
+</style>
 
-  </style>
+<script type="text/javascript">
+  function CreateTableFrom()
+  {
+     document.getElementById('formula').style.display="inline";
+  }
+</script>
 </head>
 <body>
    <div id="legend">
@@ -75,12 +98,38 @@ font-family: "Times New Roman", Georgia, Serif;
        <label class="col-lg-1 control-label" id="empId">Designation</label> 
       <div class="col-lg-2"><input type="text" class="form-control" ></div>
       <div class="col-md-3">
-      <input type="button"  class="btn btn-primary"  onclick="CreateTableFromJSON()" value="Calculate" />
+      <input type="button"  class="btn btn-primary"  onclick="CreateTableFrom()" value="Calculate" />
       <div id="showData">
    <label class="col-lg-1 control-label" id="emp">Process completed</label> 
   <img src="c.png" class=" pull-mid" id="circle" width="200" height="200">
   </div>
+  <div class="card">
+<div class="container" id="formula" style="display: none">
+
+<table>
+   <thead>
+   <tr>
+   <td>PF:</td>
+   <td>4%</td>
+   </tr>
+   <tr>
+   <td>ESI:</td>
+   <td>3%</td>
+   </tr>
+<tr>
+  <td>HRA :</td>
+  <td>5%</td>
+</tr>
+<tr>
+  <td>DA :</td>
+  <td>4%</td>
+</tr>
+ </thead>
+</table>
+  </div>
 </div>
+</div>
+
       </fieldset>
       </div>
     </form>
@@ -90,49 +139,72 @@ font-family: "Times New Roman", Georgia, Serif;
 </form>
 </div>
 <div class="container">
-    <div class="img"><img class="img-circle" img src="x.jpg"/></div>
+    <div class="img">
+    <a href="employeeSalary.html">
+     <img class="img"  id="option " src="correct.jpg" alt="Submit" width="20" height="20"></a>
+     <img class="img-circle" img src="x.jpg"/></div>
     <div class="text"><h5>Sobana</h5></div>
     <div class="text"><h5>13it001</h5></div>
     <div class="text"><u><h5>completed</h5></u></div>
 </div>
 <div class="container">
-    <div class="img"><img class="img-circle" img src="x.jpg"/></div>
+    <div class="img">
+     <a href="employeeSalary.html">
+    <img class="img"  id="option1 " src="correct.jpg" alt="Submit" width="20" height="20"></a>
+    <img class="img-circle" img src="x.jpg"/></div>
     <div class="text"><h5>Pirithivi</h5></div>
     <div class="text"><h5>13it002</h5></div>
     <div class="text"><u><h5>completed</h5></u></div>
 </div>
 <div class="container">
-    <div class="img"><img class="img-circle" img src="x.jpg"/></div>
+    <div class="img">
+     <a href="employeeSalary.html">
+    <img class="img"  id="option " src="correct2.png" alt="Submit" width="20" height="20"></a>
+    <img class="img-circle" img src="x.jpg"/></div>
     <div class="text"><h5>Arthi</h5></div>
     <div class="text"><h5>13it003</h5></div>
     <div class="text"><u><h5>Pending</h5></u></div>
 </div>
 <div class="container">
-    <div class="img"><img class="img-circle" img src="x.jpg"/></div>
+    <div class="img">
+     <a href="employeeSalary.html">
+    <img class="img"  id="option " src="correct2.png" alt="Submit" width="20" height="20"></a>
+    <img class="img-circle" img src="x.jpg"/></div>
     <div class="text"><h5>Dharani</h5></div>
     <div class="text"><h5>13it004</h5></div>
     <div class="text"><u><h5>Pending</h5></u></div>
 </div>
 <div class="container">
-    <div class="img"><img class="img-circle" img src="x.jpg"/></div>
+    <div class="img">
+     <a href="employeeSalary.html">
+    <img class="img"  id="option " src="correct.jpg" alt="Submit" width="20" height="20"></a>
+    <img class="img-circle" img src="x.jpg"/></div>
    <div class="text"><h5>Kavitha</h5></div>
     <div class="text"><h5>13it005</h5></div>
     <div class="text"><u><h5>completed</h5></u></div>
 </div>
 <div class="container">
-    <div class="img"><img class="img-circle" img src="x.jpg"/></div>
+    <div class="img">
+     <a href="employeeSalary.html">
+    <img class="img"  id="option " src="correct.jpg" alt="Submit" width="20" height="20"></a>
+    <img class="img-circle" img src="x.jpg"/></div>
    <div class="text"><h5>Uma Devi</h5></div>
     <div class="text"><h5>13it006</h5></div>
     <div class="text"><u><h5>completed</h5></u></div>
 </div>
 <div class="container">
-    <div class="img"><img class="img-circle" img src="x.jpg"/></div>
+    <div class="img">
+     <a href="employeeSalary.html">
+    <img class="img"  id="option " src="correct2.png" alt="Submit" width="20" height="20"></a>
+    <img class="img-circle" img src="x.jpg"/></div>
    <div class="text"><h5>Yashini</h5></div>
     <div class="text"><h5>13it007</h5></div>
     <div class="text"><u><h5>Pending</h5></u></div>
 </div>
 <div class="container">
-    <div class="img"><img class="img-circle" img src="y.png" width="10" height="10"/></div>
+    <div class="img">
+    <a href="SalaryDetails.html">
+    <img class="img-circle" img src="more.png" alt="Submit" width="10" height="10"/></a></div>
 </div>
 
 
