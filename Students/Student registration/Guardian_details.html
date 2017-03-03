@@ -14,11 +14,7 @@ Registration Form
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
-  </script>
+
   <style type="text/css">
 	
 
@@ -214,7 +210,7 @@ td {
                                 <tr>
 			    			    <td>
 			    			
-			    			        <select id="employeeg" name="employeeg" class="form-control" >
+			    			        <select id="employeeg" name="employeeg" class="form-control" onchange="if (this.selectedIndex==1){this.form['yes3'].style.visibility='visible'}else {this.form['yes3'].style.visibility='hidden'};" >
                                         <option value="" selected="selected">Government Employee</option>
                                         <option value="yes2">Yes</option>
                                         <option value="No2">No</option>
@@ -224,7 +220,7 @@ td {
                                 </td>
                                 <td>
 
-                                    <select id="yes3" name="yes3" class="form-control" >
+                                    <select id="yes3" name="yes3" class="form-control" style="visibility:hidden;" >
                                         <option value="" selected="selected">If Yes, Select</option>
                                         <option value="central">Central</option>
                                         <option value="state">State</option>
