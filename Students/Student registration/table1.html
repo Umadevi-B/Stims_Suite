@@ -25,6 +25,20 @@ Registration Form
     f.country2.value = f.country1.value;
   }
 }
+function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah')
+                    .attr('src', e.target.result)
+                    .width(200)
+                    .height(180);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
     </script>
 
   <style type="text/css">
@@ -254,17 +268,19 @@ Registration Form
 	
 		                            <td>
 		
-			                            <img src="no-image.jpg" class="img-responsive img-rounded" >
+			                            <img id="blah" src="no-image.jpg" class="img-responsive img-rounded" style="width:200px;height: 180px;">
 		
 		                            </td>
 	
 	                            </tr>
 	                            <tr>
 	                                <td>
-	                                   <div class="fileUpload btn btn-primary">
-    <span>Upload</span>
-    <input type="file" class="upload" />
-</div>
+                                  <button class="fileUpload btn btn-primary">
+                                  <span>Choose Photo</span>
+	                                   <input type='file' class="upload" onchange="readURL(this);" />
+  
+                                        <img id="blah"   />
+                                        </button>
 
 	
 	                                <td>

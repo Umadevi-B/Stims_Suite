@@ -14,11 +14,7 @@ Registration Form
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
-  </script>
+
   <style type="text/css">
 	
 .centered-form{
@@ -197,7 +193,17 @@ display: inline-block;
 
                                 </td>
                                 <td>
-                                    <input class="btn btn-primary btn-link" type="button" value="Upload file here">
+                                <script type="text/javascript">
+  document.getElementById("uploadBtn").onchange = function () {
+    document.getElementById("uploadFile").value = this.value;
+};
+</script>
+<body>
+<input id="uploadFile" placeholder="Choose File" disabled="disabled" />
+<div class="fileUpload btn btn-primary">
+    <span>Upload</span>
+    <input id="uploadBtn" type="file" class="upload" />
+</div>
                                 </td>
                             </tr>
                             <tr>
