@@ -9,34 +9,36 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
     
     <script src="control.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
-<
+
 </script>
 </head>
 <body ng-app="myApp">
   <style type="text/css">
           .card {
 
+        margin:25px 25px 25px 25px;
         text-align: center;
         font-weight: bold; 
         color:white;
-        min-height:25%;
+        min-height:155px;
         box-shadow: 0 8px 16px 0 rgba( 0,0,0,0.2);   
         background-color:#00c2cc;               
         transition: 0.3s;
-        width: 50%;
-        border-radius: 5px;
+        width: 150px;
+        border-radius: 15px;
         backface-visibility:hidden;
         padding: 0px;
         position: relative;
         overflow: hidden;
-        height: 132px;
+      
 
       }
 
@@ -65,7 +67,7 @@
  .card .caption{
 
           position:absolute;
-          top:150px;
+          top:170px;
           -webkit-transition:all 0.3s ease-in-out;
           -moz-transition:all 0.3s ease-in-out;
           -o-transition:all 0.3s ease-in-out;
@@ -96,17 +98,18 @@
           width: 100%;
 
    }
+
+   .ava{
+     margin: 32px 0px 7px 16px;
+     width:60px;
+     height: 60px;
+
+   }
      </style>
 
      <script type="text/javascript">
             </script>
-            <script type="text/javascript">
-            $(document).ready(function()
-            {
-              $('div #odd').css('background','#00c2cc');
-              $('div #even').css('background','#d98cb3');
-            });
-            </script>
+          
   <script>
                      function tend() {
                       // var id=this.id;
@@ -117,45 +120,39 @@
                                            }
                 </script> 
                  
-<div class="container" ng-controller="DetailController">
-
-      <div class="col-lg-12">
-         <br/>
-      </div>
-               <div  id="odd" class="card a"  ng-repeat="x in details" >
-
-               <img src ="tick.jpg" id="my1" style="visibility:hidden" height="20px" width="20px" align="right" />
-                  
-                     <center><br>
-                     <a href="www.google.com">
-                     <img src="{{x.Photo}}"  alt="Avatar" style="width:60px" height="60px"> 
-
-                     </a>
-                     </br></center>
-                     <h4> {{ x.Reg_No }}</h4>
-              
-
-
+            <div class="ui container" id="cont" ng-controller="DetailController" >
+            <div class="ui grid">
+            <div class="five column row">
+            <div class="column" ng-repeat="x in details" >
+                            <div class="card a"  style="background-color:{{x.color}};">
+                           <img src ="tick.jpg" id="my1" class=" " style="visibility:hidden" height="20px" width="20px" align="right" />
+                         <img src="{{x.Photo}}"  alt="Avatar"  class="ava">
+                                 <h4> {{ x.Reg_No }}</h4> 
                    <div class="caption">
-
                    <div class="blur">
-
-                  </div>
+                  
                    <div class="caption-text">
 
-                          <input type="button" onclick="tend(this);" value="select" style="font-size:8pt ;color:black;background-color:#b380ff
+                          <input type="button" onclick="tend()" value="select" style="font-size:8pt ;color:black;background-color:#b380ff
                             ;border:2px solid #ffffff;padding:3px ">
 
-                           <input type="button" onclick="tn(this);" value="deselect" style="font-size:8pt ;color:black;background-color:#b380ff
+                           <input type="button" onclick="tn()" value="deselect" style="font-size:8pt ;color:black;background-color:#b380ff
                             ;border:2px solid #ffffff;padding:3px">
                       
                     <p>{{ x.Name }}</p>
                     <p>{{ x.Department}}</p>         
                   </div>
+
                 </div>
-                </div></li>
+                </div>
+                </li>
                 </ul>
 <br/>
 </div>
+</div>
+</div>
+</div>
+</div>
+
 </body>
 </html>
