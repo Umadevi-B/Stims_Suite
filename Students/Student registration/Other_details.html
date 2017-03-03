@@ -271,14 +271,14 @@ td {
                     
                   </tr>  <tr>
                                 <td>
-                                    <select id="participation" name="participation" class="form-control" >
-                                        <option value="" selected="selected">Did your child has participated in any events representing the school/club/country?</option>
+                                    <select id="participation" name="participation" class="form-control" onchange="if (this.selectedIndex==1){this.form['participated'].style.visibility='visible'}else {this.form['participated'].style.visibility='hidden'};"  >
+                                        <option value="" selected="selected" >Did your child has participated in any events representing the school/club/country?</option>
                                         <option value="yes">Yes</option>
                                         <option value="no">No</option>
                                     </select>
                                 </td>
                                 <td>
-                                    <input type="text" name="participated" id="participated" class="form-control " placeholder="If Yes, Please describe activity(ies)" > 
+                                    <input type="text" name="participated" id="participated" class="form-control " placeholder="If Yes, Please describe activity(ies)" style="visibility:hidden;"> 
                                 </td>
                             </tr>
 			    			

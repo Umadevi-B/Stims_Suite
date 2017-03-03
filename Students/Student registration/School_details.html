@@ -15,11 +15,7 @@ Registration Form
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
-  </script>
+
   <style type="text/css">
 	
 .centered-form{
@@ -189,7 +185,7 @@ td {
 			    			
 			    			         
                             
-                                    <select id="schoolattended" name="schoolattended" class="form-control" >
+                                    <select id="schoolattended" name="schoolattended" class="form-control" onchange="if (this.selectedIndex==1){this.form['curscdetails'].style.visibility='visible'}else {this.form['curscdetails'].style.visibility='hidden'};"  >
                                         <option value="" selected="selected">Current School Attended(If Any)</option>
                                         <option value="yes2">Yes</option>
                                         <option value="No2">No</option>
@@ -200,7 +196,7 @@ td {
                                 </td>
                                 <td>
 
-                                    <input type="text"  name="curscdetails" class="form-control" id="curscdetails" placeholder="Period Of Attendence: Start Year - End Year" >
+                                    <input type="text"  name="curscdetails" class="form-control" id="curscdetails" placeholder="Period Of Attendence: Start Year - End Year" style="visibility:hidden;">
                                 </td>
 
                             </tr>
@@ -268,7 +264,7 @@ td {
                             </tr>
                             <tr>
                                 <td>
-                                    <select id="discontinue" name="discontinue" class="form-control">
+                                    <select id="discontinue" name="discontinue" class="form-control" onchange="if (this.selectedIndex==1){this.form['discontinues'].style.visibility='visible'}else {this.form['discontinues'].style.visibility='hidden'};" >
                                         <option value="" selected="selected">Does your child has any discontinuation in his/her studies?</option>
                            
                                         <option value="yes3">Yes</option>
@@ -277,12 +273,12 @@ td {
                                         </select>
                                 </td>
                                 <td>
-                                    <input type="text" name="discontinues" id="discontinues" class="form-control " placeholder="If Yes, Please give details" > 
+                                    <input type="text" name="discontinues" id="discontinues" class="form-control " placeholder="If Yes, Please give details" style="visibility:hidden;" > 
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <select id="disablity" name="disablity" class="form-control">
+                                    <select id="disablity" name="disablity" class="form-control" onchange="if (this.selectedIndex==1){this.form['disabilities'].style.visibility='visible'}else {this.form['disabilities'].style.visibility='hidden'};" >
                                         <option value="" selected="selected">Does your child has any learning disabilities?</option>
                            
                                         <option value="yes3">Yes</option>
@@ -291,12 +287,12 @@ td {
                                         </select>
                                 </td>
                                 <td>
-                                    <input type="text" name="disabilities" id="disabilities" class="form-control " placeholder="If Yes, Please give details" > 
+                                    <input type="text" name="disabilities" id="disabilities" class="form-control " placeholder="If Yes, Please give details" style="visibility:hidden;"> 
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <select id="specialeducation" name="specialeducation" class="form-control">
+                                    <select id="specialeducation" name="specialeducation" class="form-control" onchange="if (this.selectedIndex==1){this.form['specialeducations'].style.visibility='visible'}else {this.form['specialeducations'].style.visibility='hidden'};" >
                                         <option value="" selected="selected">Does your child needs any special educational help?</option>
                            
                                         <option value="yes3">Yes</option>
@@ -305,12 +301,12 @@ td {
                                         </select>
                                 </td>
                                 <td>
-                                    <input type="text" name="specialeducations" id="specialeducations" class="form-control " placeholder="If Yes, Please give details" > 
+                                    <input type="text" name="specialeducations" id="specialeducations" class="form-control " placeholder="If Yes, Please give details" style="visibility:hidden;"> 
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <select id="discipline" name="discipline" class="form-control">
+                                    <select id="discipline" name="discipline" class="form-control" onchange="if (this.selectedIndex==1){this.form['disciplines'].style.visibility='visible'}else {this.form['disciplines'].style.visibility='hidden'};" >
                                         <option value="" selected="selected">Has your child met with any discipline issues?</option>
                            
                                         <option value="yes3">Yes</option>
@@ -319,12 +315,12 @@ td {
                                         </select>
                                 </td>
                                 <td>
-                                    <input type="text" name="disciplines" id="disciplines" class="form-control " placeholder="If Yes, Please give details" > 
+                                    <input type="text" name="disciplines" id="disciplines" class="form-control " placeholder="If Yes, Please give details" style="visibility:hidden;"> 
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <select id="concern" name="concern" class="form-control">
+                                    <select id="concern" name="concern" class="form-control" onchange="if (this.selectedIndex==1){this.form['concerns'].style.visibility='visible'}else {this.form['concerns'].style.visibility='hidden'};" >
                                         <option value="" selected="selected">Does your child have any special concerns(Eg:Speech,Language,health,other?</option>
                            
                                         <option value="yes3">Yes</option>
@@ -333,7 +329,7 @@ td {
                                         </select>
                                 </td>
                                 <td>
-                                    <input type="text" name="concerns" id="concerns" class="form-control " placeholder="If Yes, Please give details" > 
+                                    <input type="text" name="concerns" id="concerns" class="form-control " placeholder="If Yes, Please give details" style="visibility:hidden;"> 
                                 </td>
                             </tr>
 

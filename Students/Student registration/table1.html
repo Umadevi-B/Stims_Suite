@@ -16,6 +16,16 @@ Registration Form
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+        function Filladdress(f) {
+  if(f.addresstoo.checked == true) {
+    f.permanentaddress2.value = f.presentaddress1.value;
+    f.pincode2.value = f.pincode1.value;
+    f.state2.value = f.state1.value;
+    f.country2.value = f.country1.value;
+  }
+}
+    </script>
 
   <style type="text/css">
       td
@@ -94,6 +104,22 @@ Registration Form
 { 
   text-shadow: 0 0px 0 #FAE;
 }
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
 
   </style>
    
@@ -139,28 +165,28 @@ Registration Form
 			    			<tr>
 			    			    <td>
 			    			
-			    			        <select id="class" name="class" class="form-control" required="required">
+			    			        <select  name="class" class="form-control" required="required" onchange="if (this.selectedIndex!==1){this.form['currentclass'].style.visibility='visible'}else {this.form['currentclass'].style.visibility='hidden'};">
                                         <option value="" selected="selected">Applied For Class</option>
-                                        <option value="prekg">PreKG</option>
-                                        <option value="lkg">LKG</option>
-                                        <option value="ukg">UKG</option>
-                                        <option value="one">1</option>
-                                        <option value="two">2</option>
-                                        <option value="three">3</option>
-                                        <option value="four">4</option>
-                                        <option value="five">5</option>
-                                        <option value="six">6</option>
-                                        <option value="seven">7</option>
-                                        <option value="eight">8</option>
-                                        <option value="nine">9</option>
-                                        <option value="eleven">11</option>
+                                        <option value="1">PreKG</option>
+                                        <option value="2">LKG</option>
+                                        <option value="3">UKG</option>
+                                        <option value="4">1</option>
+                                        <option value="5">2</option>
+                                        <option value="6">3</option>
+                                        <option value="7">4</option>
+                                        <option value="8">5</option>
+                                        <option value="9">6</option>
+                                        <option value="10">7</option>
+                                        <option value="11">8</option>
+                                        <option value="12">9</option>
+                                        <option value="13">11</option>
 
                                     </select>
 
                                 </td>
                                 <td>
 
-                                    <select id="class" name="class" class="form-control" required="required">
+                                    <select  name="currentclass" class="form-control" required="required" style="visibility:hidden;">
                                         <option value="" selected="selected">Current Class</option>
                                         <option value="prekgg">PreKG</option>
                                         <option value="lkgg">LKG</option>
@@ -235,7 +261,10 @@ Registration Form
 	                            </tr>
 	                            <tr>
 	                                <td>
-	                                    <input class="btn btn-primary " type="button" value="Choose Photo">
+	                                   <div class="fileUpload btn btn-primary">
+    <span>Upload</span>
+    <input type="file" class="upload" />
+</div>
 
 	
 	                                <td>
@@ -340,39 +369,32 @@ Registration Form
 			    			<tr>
 			    			    <td>
 			    			
-			    			        <input type="text" name="presentaddress1" id="presentaddress1" class="form-control " placeholder="Present Address" required="required">
+			    			        <input type="text" name="presentaddress1"  class="form-control " placeholder="Present Address" required="required">
                                    
 
                                 </td>
                                 <td>
-                                    <input type="text" name="pincode1" id="pincode1" class="form-control " placeholder="Pincode/Zipcode" required="required">
+                                    <input type="text" name="pincode1"  class="form-control " placeholder="Pincode/Zipcode" required="required">
                                 </td>
 
                             
                                 <td>
-                                    <input type="text" name="state1" id="state1" class="form-control " placeholder="State" required="required">
+                                    <input type="text" name="state1"  class="form-control " placeholder="State" required="required">
                                 </td>
                                 </tr>
                                 <tr>
                                 <td>
-                                   <input type="text" name="country1" id="country1" class="form-control " placeholder="Country" required="required">
+                                   <input type="text" name="country1"  class="form-control " placeholder="Country" required="required">
                                 </td>
                            
                                 <td>
-                                    <select id="sameaddress" name="sameaddress" class="form-control" required="required">
-                                        <option value="" selected="selected">Is Present Address same as Permanent Address? </option>
-                           
-                                        <option value="yes1">Yes</option>
-                                        <option value="no1">No</option>
-                                        
-                                        
-                            
-                                        </select>
+                                    <input type="checkbox" name="addresstoo" onclick="Filladdress(this.form)" required="required" >
+Check this box if Present Address and Permanent Address are same
                                 </td>
 
                                 <td>
 
-                                  <input type="text" name="presentaddress2" id="presentaddress2" class="form-control " placeholder="Present Address" required="required"> 
+                                  <input type="text" name="permanentaddress2"  class="form-control " placeholder="Permanent Address" required="required"> 
                                     
 
 
@@ -380,13 +402,13 @@ Registration Form
                             </tr>
                             <tr>
                             <td>
-                                <input type="text" name="pincode2" id="pincode2" class="form-control " placeholder="Pincode/Zipcode" required="required">	
+                                <input type="text" name="pincode2"  class="form-control " placeholder="Pincode/Zipcode" required="required">	
                             </td>
                             <td>
-                            	<input type="text" name="state2" id="state2" class="form-control " placeholder="State" required="required">
+                            	<input type="text" name="state2"  class="form-control " placeholder="State" required="required">
                             </td>
                             <td>
-                            	<input type="text" name="country2" id="country2" class="form-control " placeholder="Country" required="required">
+                            	<input type="text" name="country2"  class="form-control " placeholder="Country" required="required">
                             </td>
                             	
                             
