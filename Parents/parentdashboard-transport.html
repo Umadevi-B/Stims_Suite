@@ -5,7 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Transport</title>
-    
+
+    <!-- Bootstrap -->
+    <link href="school/css/bootstrap.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/components/grid.min.css">
@@ -68,25 +79,75 @@ function erode() {
 function perundurai() {
     document.getElementById("destination").disabled = true;
 }
-function dispaly()
+function croute() {
+    document.getElementById("rc").disabled = true;
+}
+function disp()
 {
 	document.getElementById("b1").style.display="inline";
 }
-function routechange()
+function disp2()
 {
-	var chroute=document.getElementById("route.value")
-	if(route=="Thindal")
-	{
-	document.getElementById("r1").value="8am";
-	document.getElementById("r1").value="10000";
-	}
-	if(route=="AET")
-	{
-		document.getElementById("r2");
-	}
+	document.getElementById("c1").style.display="inline";
 }
+function routechange()
+	{
+    var x = document.getElementById("route").value;
+    
+if(x=="nandha")
+{
+	document.getElementById("time").value= "8am";
+	document.getElementById("fees").value = "5000";
+}
+ if(x=="Thindal")
+ {
+ 	document.getElementById("time").value="8.10am";
+ 	document.getElementById("fees").value = "6000";
 
-	</script>
+ }  
+ if(x=="AET") 
+ {
+
+ 	document.getElementById("time").value="8.15am";
+ 	document.getElementById("fees").value = "7000";
+
+ }
+ if(x=="KONGU")
+ {
+ 	document.getElementById("time").value="8.20am";
+ 	document.getElementById("fees").value = "8000";
+ }
+if(x=="perundurai") 
+{
+document.getElementById("time").value="8.30am";
+ 	document.getElementById("fees").value = "9000";
+
+}
+}
+function newroute()
+	{
+    var y = document.getElementById("stop").value;
+    
+if(y=="bhavani1")
+{
+	document.getElementById("busno2").value= "40";
+	document.getElementById("time2").value = "8am";
+	document.getElementById("fees2").value = "5000";
+}
+if(y=="mgr")
+{
+	document.getElementById("busno2").value= "50";
+	document.getElementById("time2").value = "9am";
+	document.getElementById("fees2").value = "6000";
+}
+if(y=="surampatti")
+{
+	document.getElementById("busno2").value= "60";
+	document.getElementById("time2").value = "10am";
+	document.getElementById("fees2").value = "6000";
+}
+}
+</script>
 
 <style type="text/css">
 .first
@@ -263,9 +324,7 @@ table {
 th, td {
     padding: 15px;
 }
-</
 </style>
-
 </head>
 <body >
 <div id="header">
@@ -318,11 +377,13 @@ search:<input type="text" placeholder="search driver" ng-model="searchtext"><br>
 	</tbody>
 </table>
 </div>
+<br/>
 <div>
-<button type="button"  onclick="display()">view Route and time</button>
+<button class="col-lg-offset-10" type="button" onclick="disp();">view Route and time</button>
 </div>
-<div id="b1" style="display: none;">
-<table >
+</br>
+<div id="b1" style="display:none">
+<table width="50%" >
 <thead>
 <tr>
 	<th>source</th>
@@ -333,25 +394,61 @@ search:<input type="text" placeholder="search driver" ng-model="searchtext"><br>
 		</tr>
 		</thead>
 		<tbody>
+		<tr>
 		<td> <input type="text" id="source" onclick="erode()" placeholder="erode"></td>
 		<td><input type="text" id="destination" onclick="perundurai()" placeholder="perundurai"></td>
 			<td>
-		<select id="route">
-		<option value="a">select stop</option>
-  <option id="r1" value="a">Thindal</option>
-  <option id="r2"  value="b">AET</option>
-  <option id="r3" value="c">KONGU</option>
-  <option id="r4"  value="d">nandha</option>
-   <option id="r5"  value="e">perundurai</option>
+		<select id="route" onchange="routechange();">
+		<option value="-1">select stop</option>
+  <option  value="Thindal">Thindal</option>
+  <option  value="AET">AET</option>
+  <option  value="KONGU">KONGU</option>
+  <option  value="nandha">nandha</option>
+   <option value="perundurai">perundurai</option>
 </select>
 </td>
 
-	<td><input type="text" name="time1" id="time"  onchange="routechange()"></td>
-	<td><input type="text" name="fees1" id="fees" onchange="routechange()"  ></td>
+	<td><input type="text" readOnly  name="time1" id="time"  ></td>
+	<td><input type="text" readOnly  name="fees1" id="fees"  ></td>
+</tr>
 	</tbody>
-</table>
+	</table>
+	</br>
+<div>
+<button class="col-lg-offset-10" type="button" onclick="disp2();">click Route request</button>
 </div>
-</div>
+</br>
+<div id="c1" style="display: none;" >
+<table>
+<thead>
+<tr>
+	<th>current route</th>
+	<th>select new route</th>
+		<th>place</th>
+		<th>busno</th>
+		<th>time</th>
+		<th>fees</th>
+		</tr>
+<td> <input type="text" id="rc" onclick="croute()" placeholder="Erode-perundurai"></td>
+<td>
+		<select id="route1"  >
+		<option value="11">select route</option>
+  <option  value="bhavani">bhavani-perundurai</option>
+  <option  value="anthiyur">anthiyur-perundurai</option>
+  <option  value="kangeyam">kangeyam-perundurai</option>
+</select>
+</td>
+<td>
+ <select id="stop" onchange="newroute();">
+ <option value="22">select place</option>
+  <option  value="bhavani1">bhavani</option>
+  <option  value="mgr">m.gr nagar</option>
+  <option  value="surampatti">surampatti</option>
+</select>
+</td>
+<td><input type="text" readOnly name="busno1" id="busno2"  ></td>
+<td><input type="text" readOnly name="time1" id="time2"  ></td>
+<td><input type="text" readOnly  name="fees1" id="fees2"  ></td>
 </div>
 </div>
 </body>

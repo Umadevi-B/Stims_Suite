@@ -44,7 +44,7 @@ label.label-floatlabel {
     color: #46b8da;
     font-size: 11px;
 }
-:required  {  
+.required  {  
 	 background: url(https://cdn0.iconfinder.com/data/icons/fugue/icon/asterisk-small.png) no-repeat;
 	 background-position:left top;
 	}
@@ -118,10 +118,10 @@ display: inline-block;
   left: 100%;
   z-index: 1; 
 }
-.breadcrumb li:first-child a {
+/*.breadcrumb li:first-child a {
   padding-left: 60px;
  
-}
+}*/
 .breadcrumb li:nth-child(6) a {
 
   background: hsla(140, 100%, 40%,1);
@@ -133,6 +133,28 @@ display: inline-block;
 .breadcrumb > li 
 { 
   text-shadow: 0 0px 0 #FAE;
+}
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.require
+{
+  /*color: red;*/
+   background: url(https://cdn0.iconfinder.com/data/icons/fugue/icon/asterisk-small.png) no-repeat;
+     background-position:left top;
 }
 
   </style>
@@ -183,27 +205,24 @@ display: inline-block;
 			    		 <table width="100%"   >
 			    				
 			    			<tr>
-			    			    <td>
+			    			    <td >
 			    			
-			    			        <ul>
-                                       <li>
-                                           Birth Certificate
+			    			        <ul  >
+                                       <li  >
+                                          
+                                           <span  > Birth Certificate</span>
                                        </li>                  
                                     </ul>
 
                                 </td>
-                                <td>
+                                <td class="required">
                                 <script type="text/javascript">
   document.getElementById("uploadBtn").onchange = function () {
-    document.getElementById("uploadFile").value = this.value;
-};
+ };
 </script>
-<body>
-<input id="uploadFile" placeholder="Choose File" disabled="disabled" />
-<div class="fileUpload btn btn-primary">
-    <span>Upload</span>
+<span class="text-primary">Upload</span>
     <input id="uploadBtn" type="file" class="upload" />
-</div>
+
                                 </td>
                             </tr>
                             <tr>
@@ -216,8 +235,13 @@ display: inline-block;
                                     </ul>
 
                                 </td>
-                                <td>
-                                    <input class="btn btn-primary btn-link" type="button" value="Upload file here">
+                                <td class="required">
+                                   <script type="text/javascript">
+  document.getElementById("uploadBtn").onchange = function () {
+ };
+</script>
+<span class="text-primary">Upload</span>
+    <input id="uploadBtn" type="file" class="upload" />
                                 </td>
                             </tr>
                             <tr>
@@ -230,8 +254,13 @@ display: inline-block;
                                     </ul>
 
                                 </td>
-                                <td>
-                                    <input class="btn btn-primary btn-link" type="button" value="Upload file here">
+                                <td class="required">
+                                    <script type="text/javascript">
+  document.getElementById("uploadBtn").onchange = function () {
+ };
+</script>
+<span class="text-primary">Upload</span>
+    <input id="uploadBtn" type="file" class="upload" />
                                 </td>
                             </tr>
                             <tr>
@@ -244,8 +273,13 @@ display: inline-block;
                                     </ul>
 
                                 </td>
-                                <td>
-                                    <input class="btn btn-primary btn-link" type="button" value="Upload file here">
+                                <td class="required">
+                                    <script type="text/javascript">
+  document.getElementById("uploadBtn").onchange = function () {
+ };
+</script>
+<span class="text-primary">Upload</span>
+    <input id="uploadBtn" type="file" class="upload" />
                                 </td>
                             </tr>
                             <tr>
@@ -259,7 +293,12 @@ display: inline-block;
 
                                 </td>
                                 <td>
-                                    <input class="btn btn-primary btn-link" type="button" value="Upload file here">
+                                    <script type="text/javascript">
+  document.getElementById("uploadBtn").onchange = function () {
+ };
+</script>
+<span class="text-primary">Upload</span>
+    <input id="uploadBtn" type="file" class="upload" />
                                 </td>
                             </tr>
                             <tr>
@@ -273,21 +312,31 @@ display: inline-block;
 
                                 </td>
                                 <td>
-                                    <input class="btn btn-primary btn-link" type="button" value="Upload file here">
+                                    <script type="text/javascript">
+  document.getElementById("uploadBtn").onchange = function () {
+ };
+</script>
+<span class="text-primary">Upload</span>
+    <input id="uploadBtn" type="file" class="upload" />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                             
-                                    <ul>
-                                       <li>
-                                           Income Certificate
+                                    <ul >
+                                       <li >
+                                           Income Certificate 
                                        </li>                  
                                     </ul>
 
                                 </td>
                                 <td>
-                                    <input class="btn btn-primary btn-link" type="button" value="Upload file here">
+                                    <script type="text/javascript">
+  document.getElementById("uploadBtn").onchange = function () {
+ };
+</script>
+<span class="text-primary" >Upload</span>
+    <input id="uploadBtn" type="file" class="upload" required="required" />
                                 </td>
                             </tr>
 

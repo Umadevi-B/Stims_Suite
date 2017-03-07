@@ -9,8 +9,92 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="index.html"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
+    <script src="control.js"></script>
+<script type="text/javascript" src="/assets/script/canvasjs.min.js"></script>
+<body ng-app="myApp">
   <style type="text/css">
-  	#navbar
+          .card {
+
+        margin:25px 25px 25px 25px;
+        text-align: center;
+        font-weight: bold; 
+        color:white;
+        min-height:90px;
+        box-shadow: 0 8px 16px 0 rgba( 0,0,0,0.2);   
+        background-color:#00c2cc;               
+        transition: 0.3s;
+        width: 150px;
+        border-radius: 15px;
+        backface-visibility:hidden;
+        padding: 0px;
+        position: relative;
+        overflow: hidden;
+      
+
+      }
+  .card:hover .caption
+  {
+
+        opacity: 1;
+        transform: translateY(-125px);
+        -webkit-transform:translateY(-125px);
+        -moz-transform:translateY(-125px);
+        -ms-transform:translateY(-125px);
+         -o-transform:translateY(-125px);
+      }
+
+  .card img
+  {
+
+         z-index: 4;
+    }
+
+ .card .caption{
+
+          position:absolute;
+          top:190px;
+          bottom:10px;
+          -webkit-transition:all 0.3s ease-in-out;
+          -moz-transition:all 0.3s ease-in-out;
+          -o-transition:all 0.3s ease-in-out;
+          -ms-transition:all 0.3s ease-in-out;
+          transition:all 0.3s ease-in-out;
+          width:100%;
+    }
+         
+  .caption .blur
+  {
+          background-color: rgba(0,0,0,0.7);
+          height: 300px;
+          z-index: 5;
+          position: absolute;
+          width: 100%;
+    }
+       
+ .card .caption-text
+ {
+          z-index: 10;
+          color: #fff;
+          position: absolute;
+          height: 300px;
+          text-align: center;
+           color:white;
+          top:-1px;
+          width: 100%;
+
+   }
+
+   .ava{
+     margin: 32px 0px 7px 16px;
+     width:60px;
+     height: 60px;
+     border-radius:450px 50px 500px 500px;
+   }
+ 
+	#navbar
   	{
   		background-color: #4d1933;
   		font-color:black;
@@ -23,11 +107,14 @@
 #pie,#bar,#Line,#Histo
 {
 	display:none;
+ 
 }
+#cont
+{
+  display:none;
 
-  </style>
-
-
+}
+</style>
 </head>
 <body>
 <script type="text/javascript">
@@ -37,8 +124,10 @@
   </script>
   <script type="text/javascript">
   
+
 	function view()
 	{
+    document.getElementById("cont").style.display='none';
 		document.getElementById("pie").style.display="inline";
 		document.getElementById("bar").style.display="none";
 		document.getElementById("Line").style.display="none";
@@ -46,6 +135,7 @@
 	}
 	function barchart()
 	{
+    document.getElementById("cont").style.display='none';
 		document.getElementById("pie").style.display="none";
 		document.getElementById("bar").style.display="inline";
 		document.getElementById("Line").style.display="none";
@@ -53,6 +143,7 @@
 	}
 	function line()
 	{
+    document.getElementById("cont").style.display='none';
 		document.getElementById("pie").style.display="none";
 		document.getElementById("bar").style.display="none";
 		document.getElementById("Line").style.display="inline";
@@ -60,11 +151,33 @@
 	}
 	function Histogram()
 	{
+    document.getElementById("cont").style.display='none';
 		document.getElementById("pie").style.display="none";
 		document.getElementById("bar").style.display="none";
 		document.getElementById("Line").style.display="none";
 		document.getElementById("Histo").style.display="inline";
 	}
+function tend()
+ {
+   document.getElementById("my1").style.visibility='visible';
+
+  }
+function tn()
+ {
+   document.getElementById("my1").style.visibility='hidden';
+
+ }
+
+
+    function card()
+          {
+          document.getElementById("cont").style.display='inline';
+          document.getElementById("pie").style.display="none";
+          document.getElementById("bar").style.display="none";
+          document.getElementById("Line").style.display="none";
+          document.getElementById("Histo").style.display="none";
+            }
+
 </script>
 <nav class="navbar navbar-inverse" id="navbar" >
 
@@ -72,13 +185,13 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="http://santechnosolutions.com/">STIMS SUIT</a>
     </div>
-   
+
 
     <ul class="nav navbar-nav" >
       
       <li class="active dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Class <span class="caret"></span></a>
         <ul class="dropdown-menu" id="back">
-          <li><a href="index.html" target="targetframe">I</a></li>
+          <li><a onclick="card()">I</a></li>
           <li><a href="#">II</a></li>
           <li><a href="#">III</a></li>
            <li><a href="#">IV</a></li>
@@ -92,8 +205,8 @@
           <li><a href="#">XII</a></li>
         </ul>
       </li>
-      <li ><a href="#">Total Students</a></li>
-      <li><a href="#">Date<input type="date" style="width:70px; height: 25px; color:white; font-weight: bold; background-color: #4d1933 " id="datepicker"></a></li>
+      <li ><a href="#">Total Students<input type="text" style="width: 30px; background-color: white"></a></li>
+      <li><a href="#">Date<input type="date" style="width:70px; height: 25px; color:white; font-weight: bold; background-color:#4d1933" id="datepicker"></a></li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Default<span class="caret"></span></a>
       <ul class="dropdown-menu" id="back">
           <li><a href="#">Absent</a></li>
@@ -116,19 +229,53 @@
           <li><a href="#" onclick="Histogram()">Histogram</a></li></ul></li>
     </ul>
   </div>
+     
 </nav>
-  
+
+   <div class="ui container" id="cont" ng-controller="DetailController" >
+
+            <div class="ui grid">
+            <div class="five column row">
+            <div class="column" ng-repeat="x in details">
+                            <div class="card a"  style="background-color:{{x.color}};">
+
+                    <img src ="tick.jpg" id='my1' style="visibility:hidden" height="20px" width="20px" align="right">
+
+                         <img src="{{x.Photo}}"  alt="Avatar"  class="ava">
+                                 <h4 style="color:black"> {{ x.Reg_No }}</h4> 
+                   <div class="caption">
+                   <div class="blur">
+                  
+                   <div class="caption-text">
+
+                          <input type="button" id="select" onclick="tend();" value="select" style="font-size:8pt ; color:black;background-color:#b380ff
+                            ;border:2px solid #ffffff;padding:3px">
+
+                           <input type="button" id="deselect" onclick="tn();" value="deselect" style="font-size:8pt ;color:black;background-color:#b380ff
+                            ;border:2px solid #ffffff;padding:3px">
+                      
+                    <p>{{ x.Name }}</p>
+                    <p>{{ x.Department}}</p>         
+                  </div>
+
+                </div>
+                </div>
+                </li>
+                </ul>
+<br/>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <div class="container">
 <center>
- <div>
-    <iframe src="index.html" name="targetframe" allowTransparency="false" scrolling="yes" frameborder="50px" style="width: 100%; height: 700px; " >
-    </iframe>
-  </div>
- <img src="photos/images.jpg" id="pie" style="margin-top:200px;" >
- <img src="photos/bar.jpg" id="bar" style="margin-top:200px;" >
-  <img src="photos/line.jpg" id="Line" style="margin-top:200px;" >
-   <img src="photos/Histogram.jpg" id="Histo" style="margin-top:200px;" >
- </center>
+ <img src="photos/images.jpg" id="pie" style= "margin-top:150px;" >
+ <img src="photos/bar.jpg" id="bar" style="margin-top:70px;" >
+  <img src="photos/line.jpg" id="Line" style="margin-top:70px;" >
+   <img src="photos/Histogram.jpg" id="Histo" style="margin-top:150px;" >
+</center>
 </div>
 
 </body>
