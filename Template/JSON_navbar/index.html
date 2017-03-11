@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+ 	<script src="js/data.js"></script>
+	<link rel="stylesheet" href="css/Animate.css">
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body ng-controller="menu">
+		<header>
+			<nav class="navbar navbar-dafault">
+				<ul>
+					<li ng-repeat="x in items"><a href="#"><span class="Home"><i class="icon {{x.icon}}"></i></span>{{x.text}}</a>
+					<ul>
+						<li ng-repeat="list in x.menulist" ><a href="#">{{list.text}}</a></li>
+					</ul>
+					</li>
+					<li><span class="Search"></span>
+					<input type="text" list="json-datalist" placeholder="Search" class="form-control">
+					 <datalist id="json-datalist" >
+					 <option ng-repeat=" x in data">{{x.option}}
+					</datalist>
+					</li>
+				</ul>
+			</nav>
+
+		</header>
+</body>
+</html>
