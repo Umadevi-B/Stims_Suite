@@ -1,0 +1,483 @@
+<html ng-app="myApp">
+<head>
+<!-- table -->
+   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css" type="text/css">
+   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/dataTables.semanticui.min.css" type="text/css">
+   <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+   <script src="https://cdn.datatables.net/1.10.13/js/dataTables.semanticui.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+   <script src="js/data3.js"></script>
+   
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.js"></script>
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css" type="text/css">
+
+    <script>
+     
+      $(document).ready(function() {
+         $("#button1").click(function() {
+                $("#segment").show(500);
+                $("#pusher1").hide(500);
+                $("#pusher2").hide(500);
+                $("#pusher3").hide(500);
+                  $("#pusher4").hide(500);
+         });
+         });
+
+       $(document).ready(function() {
+         $("#button2").click(function() {
+                $("#pusher1").show(500);
+                $("#segment").hide(500);
+                $("#pusher2").hide(500);
+                $("#pusher3").hide(500);
+                  $("#pusher4").hide(500);
+         });
+         });
+
+        $(document).ready(function() {
+         $("#button3").click(function() {
+                $("#pusher2").show(500);
+                 $("#pusher1").hide(500);
+                 $("#pusher3").hide(500);
+                   $("#pusher4").hide(500);
+                $("#segment").hide(500);
+         });
+         });
+        $(document).ready(function() {
+         $("#button4").click(function() {
+                $("#pusher3").show(500);
+                 $("#pusher1").hide(500);
+                  $("#pusher2").hide(500);
+                   $("#pusher4").hide(500);
+                $("#segment").hide(500);
+         });
+         });
+         $(document).ready(function() {
+         $("#button5").click(function() {
+                $("#pusher4").show(500);
+                 $("#pusher1").hide(500);
+                 $("#pusher3").hide(500);
+                  $("#pusher2").hide(500);
+                $("#segment").hide(500);
+         });
+         });
+ </script>
+ <script>
+   function CountryCntrl($scope) {
+                $scope.examination = {
+                    'Admin': {
+                        'Uma': ['A', 'B', 'C', 'D'],
+                        'Kavitha': ['A', 'B', 'C'],
+                        'Siva': ['A', 'B']
+                    },
+                    'Teacher': {
+                        'Divya': ['NIL'],
+                        'Dhanushya': ['A', 'B'],
+                        'Saranya': ['A', 'B']
+                    },
+                    'Staffs': {
+                        'Anu': ['NIL'],
+                        'Akalya': ['A', 'B'],
+                        'Abishek': ['A', 'B']
+                    },
+                    'Parent': {
+                        'Sairam': ['NIL'],
+                        'Dinesh': ['A', 'B'],
+                        'Vignesh': ['A', 'B']
+                    },
+                    'Student': {
+                        'Dharani': ['A'],
+                        'Prithivi': ['B'],
+                         'Yashini': ['B']
+                    }
+                };
+            }
+ </script>
+
+</head>
+<style>
+   .pusher{
+   padding-top: 60px;
+   }
+   .ui.teal.button, .ui.teal.buttons .button {
+    background-color: #337ab7;
+    color: #FFF;
+    text-shadow: none;
+    background-image: none;
+}
+</style>
+<body  ng-controller="CountryCntrl">
+  <h2>Message details</h2>
+ <div class="ui container">
+ <table width=50%>
+ <tr><td><button class="ui primary button" id="button1"><h5><b>Compose</b></h5></button></td>
+      <td><button class="ui primary button" id="button2"><h5><b><i class="mail icon"></i>Inbox</b></h5></button></td>
+  <td><button class="ui primary button" id="button3"><h5><b><i class="external icon"></i>Sent</b></h5></button></td>
+ <td><button class="ui primary button" id="button4"><h5><b><i class="comment outline icon"> </i>Drafts</b></h5></button></td>
+ <td><button class="ui primary button" id="button5"><h5><b><i class="trash icon"></i>Trash</b></h5></button></td></tr>
+
+ </table>
+<div class="ui blue segment" id="segment" style="display: none">
+  <h4 class="ui header">Compose Mail</h4>
+<div class="column">
+<select class="ui selection dropdown"  id="group" ng-model="depts" ng-options="year for (year, depts) in examination">
+                    <option value=''>Select</option>
+                </select>
+            </div>
+            <div class="column">
+                <select class="ui selection dropdown"  id="admin" ng-disabled="!depts" ng-model="secs" ng-options="dept for (dept,sec) in depts"><option value=''>Select</option></select>
+            </div>
+<br>
+  <div class="ui fluid icon input">
+  <input type="text" placeholder="Subject"></div><br>
+  <textarea rows="10" cols="100" placeholder="type your message here..">
+  </textarea> <br>
+  <br>
+  <input type="file" ><br>    
+<button class="ui green button" id="button" style="margin-left: 700px;"><h5><b><i class="send icon"></i>Send</b></h5></button>
+ </div>
+
+
+      <div class="pusher" id="pusher1" style="display: none"  >
+         <div class="ui container" ng-controller="books">
+            <h3 class="ui header">Inbox</h3>
+            <div class="ui divider"></div>
+            <div class="ui right floated teal buttons">
+               <div class="ui grey button">Export</div>
+               <div class="ui floating dropdown icon button" id="export">
+                  <i class="upload icon"></i>
+                  <div class="menu">
+                     <div class="item"><i class="External icon"></i> Excel</div>
+                     <div class="item"><i class="mail outline icon"></i> Mail</div>
+                     <div class="item"><i class="file icon"></i>Csv</div>
+                  </div>
+               </div>
+            </div>
+            <div class="ui hidden divider"></div>
+          
+            <table id="example" class="ui very compact celled blue table" cellspacing="0" width="100%" style="text-align: center">
+<thead>
+<tr >
+    <th ng-click="sortData('sno')">SNO<div ng-class="getsortclass('sno')"></div></th>
+    <th ng-click="sortData('IDno')">ID.NO <div ng-class="getsortclass('IDno')"></div></th>
+     <th ng-click="sortData('name')">NAME <div ng-class="getsortclass('name')"></div></th>
+    <th ng-click="sortData('subject')">SUBJECT<div ng-class="getsortclass('subject')"></div></th>
+    <th ng-click="sortData('Attachment')">ATTACHMENT<div ng-class="getsortclass('Attachment')"></div></th>
+    <th ng-click="sortData('time')">TIME<div ng-class="getsortclass('time')"></div></th>
+    <th ng-click="sortData('REPLY')">REPLY<div ng-class="getsortclass('REPLY')"></div></th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="x in employee| limitTo:rowLimit|orderBy:sortcol:reversesort">  
+        <td>{{x.sno}}</td>
+        <td>{{x.IDno }} </td>
+         <td>{{x.name}}</td>
+        <td>{{x.subject}}</td>
+        <td>{{x.Attachment}}</td>
+        <td>{{x.time}}</td>
+        <td>
+ <button class="ui primary button" id="add" onclick="fun1()" >{{x.reply}}</button>
+</td>
+    </tr>
+</tbody>
+</table>
+         </div>
+     <div class="ui modal" id="modal1">
+<i class="close icon"></i>
+<div class="header">
+Sent Items
+</div>
+<div class="content">
+<div class="ui blue segment" id="segment" style="display: none">
+  <h4 class="ui header">Compose Mail</h4>
+<div class="column">
+<select class="ui selection dropdown"  id="group" ng-model="depts" ng-options="year for (year, depts) in examination">
+                    <option value=''>Select</option>
+                </select>
+            </div>
+            <div class="column">
+                <select class="ui selection dropdown"  id="admin" ng-disabled="!depts" ng-model="secs" ng-options="dept for (dept,sec) in depts"><option value=''>Select</option></select>
+            </div>
+<br>
+  <div class="ui fluid icon input">
+  <input type="text" placeholder="Subject"></div><br>
+  <textarea rows="10" cols="100" placeholder="type your message here..">
+  </textarea> <br>
+  <br>
+  <input type="file"><br>    
+<button class="ui button" id="button" style="margin-left: 700px;"><h5><b><i class="send icon"></i>Send</b></h5></button>
+ </div>
+</div>
+<div class="actions">
+<div class="ui green button">save</div>
+<div class="ui orange cancel button">close</div>
+</div>
+</div>
+     
+       </div>
+</div>
+       <!-- sent -->
+       <div class="pusher" id="pusher2" style="display: none"  >
+         <div class="ui container" ng-controller="books">
+            <h3 class="ui header">Sent Items</h3>
+            <div class="ui divider"></div>
+            <div class="ui right floated teal buttons">
+               <div class="ui grey button">Export</div>
+               <div class="ui floating dropdown icon button" id="export">
+                  <i class="upload icon"></i>
+                  <div class="menu">
+                     <div class="item"><i class="External icon"></i> Excel</div>
+                     <div class="item"><i class="mail outline icon"></i> Mail</div>
+                     <div class="item"><i class="file icon"></i>Csv</div>
+                  </div>
+               </div>
+            </div>
+            <div class="ui hidden divider"></div>
+          
+            <table id="example" class="ui very compact celled blue table" cellspacing="0" width="100%" style="text-align: center">
+<thead>
+<tr >
+    <th ng-click="sortData('sno')">SNO<div ng-class="getsortclass('sno')"></div></th>
+    <th ng-click="sortData('IDno')">ID.NO <div ng-class="getsortclass('IDno')"></div></th>
+     <th ng-click="sortData('name')">NAME <div ng-class="getsortclass('name')"></div></th>
+    <th ng-click="sortData('subject')">SUBJECT<div ng-class="getsortclass('subject')"></div></th>
+    <th ng-click="sortData('Attachment')">ATTACHMENT<div ng-class="getsortclass('Attachment')"></div></th>
+    <th ng-click="sortData('time')">TIME<div ng-class="getsortclass('time')"></div></th>
+    <th ng-click="sortData('REPLY')">REPLY<div ng-class="getsortclass('REPLY')"></div></th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="x in employee| limitTo:rowLimit|orderBy:sortcol:reversesort">  
+        <td>{{x.sno}}</td>
+        <td>{{x.IDno }} </td>
+         <td>{{x.name}}</td>
+       
+        <td>{{x.subject}}</td>
+        <td>{{x.Attachment}}</td>
+        <td>{{x.time}}</td>
+        <td>
+ <button class="ui primary button" id="add" onclick="fun1()" >{{x.reply}}</button>
+</td>
+    </tr>
+</tbody>
+</table>
+         </div>
+     <div class="ui modal" id="modal1">
+<i class="close icon"></i>
+<div class="header">
+Sent Items
+</div>
+<div class="content">
+<div class="ui blue segment" id="segment" style="display: none">
+  <h4 class="ui header">Compose Mail</h4>
+<div class="column">
+<select class="ui selection dropdown"  id="group" ng-model="depts" ng-options="year for (year, depts) in examination">
+                    <option value=''>Select</option>
+                </select>
+            </div>
+            <div class="column">
+                <select class="ui selection dropdown"  id="admin" ng-disabled="!depts" ng-model="secs" ng-options="dept for (dept,sec) in depts"><option value=''>Select</option></select>
+            </div>
+<br>
+  <div class="ui fluid icon input">
+  <input type="text" placeholder="Subject"></div><br>
+  <textarea rows="10" cols="100" placeholder="type your message here..">
+  </textarea> <br>
+  <br>
+  <input type="file"><br>    
+<button class="ui button" id="button" style="margin-left: 700px;"><h5><b><i class="send icon"></i>Send</b></h5></button>
+ </div>
+</div>
+<div class="actions">
+<div class="ui green button">save</div>
+<div class="ui orange cancel button">close</div>
+</div>
+</div>
+     
+       </div>
+<!-- drafts -->
+ <div class="pusher" id="pusher3" style="display: none"  >
+         <div class="ui container" ng-controller="books">
+            <h3 class="ui header">Drafts Items</h3>
+            <div class="ui divider"></div>
+            <div class="ui right floated primary buttons">
+               <div class="ui button">Export</div>
+               <div class="ui floating dropdown icon button" id="export">
+                  <i class="upload icon"></i>
+                  <div class="menu">
+                     <div class="item"><i class="External icon"></i> Excel</div>
+                     <div class="item"><i class="mail outline icon"></i> Mail</div>
+                     <div class="item"><i class="file icon"></i>Csv</div>
+                  </div>
+               </div>
+            </div>
+            <div class="ui hidden divider"></div>
+          
+            <table id="example" class="ui very compact celled blue table" cellspacing="0" width="100%" style="text-align: center">
+<thead>
+<tr >
+    <th ng-click="sortData('sno')">SNO<div ng-class="getsortclass('sno')"></div></th>
+    <th ng-click="sortData('IDno')">ID.NO <div ng-class="getsortclass('IDno')"></div></th>
+     <th ng-click="sortData('name')">NAME <div ng-class="getsortclass('name')"></div></th>
+    <th ng-click="sortData('subject')">SUBJECT<div ng-class="getsortclass('subject')"></div></th>
+    <th ng-click="sortData('Attachment')">ATTACHMENT<div ng-class="getsortclass('Attachment')"></div></th>
+    <th ng-click="sortData('time')">TIME<div ng-class="getsortclass('time')"></div></th>
+    <th ng-click="sortData('REPLY')">REPLY<div ng-class="getsortclass('REPLY')"></div></th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="x in employee| limitTo:rowLimit|orderBy:sortcol:reversesort">  
+        <td>{{x.sno}}</td>
+        <td>{{x.IDno }} </td>
+         <td>{{x.name}}</td>
+       
+        <td>{{x.subject}}</td>
+        <td>{{x.Attachment}}</td>
+        <td>{{x.time}}</td>
+        <td>
+ <button class="ui primary button" id="add" onclick="fun1()" >{{x.reply}}</button>
+</td>
+    </tr>
+</tbody>
+</table>
+         </div>
+     <div class="ui modal" id="modal1">
+<i class="close icon"></i>
+<div class="header">
+Sent Items
+</div>
+<div class="content">
+<div class="ui blue segment" id="segment" style="display: none">
+  <h4 class="ui header">Compose Mail</h4>
+<div class="column">
+<select class="ui selection dropdown"  id="group" ng-model="depts" ng-options="year for (year, depts) in examination">
+                    <option value=''>Select</option>
+                </select>
+            </div>
+            <div class="column">
+                <select class="ui selection dropdown"  id="admin" ng-disabled="!depts" ng-model="secs" ng-options="dept for (dept,sec) in depts"><option value=''>Select</option></select>
+            </div>
+<br>
+  <div class="ui fluid icon input">
+  <input type="text" placeholder="Subject"></div><br>
+  <textarea rows="10" cols="100" placeholder="type your message here..">
+  </textarea> <br>
+  <br>
+  <input type="file"><br>    
+<button class="ui button" id="button" style="margin-left: 700px;"><h5><b><i class="send icon"></i>Send</b></h5></button>
+ </div>
+</div>
+<div class="actions">
+<div class="ui green button">save</div>
+<div class="ui orange cancel button">close</div>
+</div>
+</div>
+     
+       </div>
+       <div class="pusher" id="pusher4" style="display: none"  >
+         <div class="ui container" ng-controller="books">
+            <h3 class="ui header">Trash Items</h3>
+            <div class="ui divider"></div>
+            <div class="ui right floated teal buttons">
+               <div class="ui grey button">Export</div>
+               <div class="ui floating dropdown  grey icon button" id="export">
+                  <i class="upload icon"></i>
+                  <div class="menu">
+                     <div class="item"><i class="External icon"></i> Excel</div>
+                     <div class="item"><i class="mail outline icon"></i> Mail</div>
+                     <div class="item"><i class="file icon"></i>Csv</div>
+                  </div>
+               </div>
+            </div>
+            <div class="ui hidden divider"></div>
+          
+            <table id="example" class="ui very compact celled blue table" cellspacing="0" width="100%" style="text-align: center">
+<thead>
+<tr >
+    <th ng-click="sortData('sno')">SNO<div ng-class="getsortclass('sno')"></div></th>
+    <th ng-click="sortData('IDno')">ID.NO <div ng-class="getsortclass('IDno')"></div></th>
+     <th ng-click="sortData('name')">NAME <div ng-class="getsortclass('name')"></div></th>
+    <th ng-click="sortData('subject')">SUBJECT<div ng-class="getsortclass('subject')"></div></th>
+    <th ng-click="sortData('Attachment')">ATTACHMENT<div ng-class="getsortclass('Attachment')"></div></th>
+    <th ng-click="sortData('time')">TIME<div ng-class="getsortclass('time')"></div></th>
+    <th ng-click="sortData('REPLY')">REPLY<div ng-class="getsortclass('REPLY')"></div></th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="x in employee| limitTo:rowLimit|orderBy:sortcol:reversesort">  
+        <td>{{x.sno}}</td>
+        <td>{{x.IDno }} </td>
+         <td>{{x.name}}</td>
+       
+        <td>{{x.subject}}</td>
+        <td>{{x.Attachment}}</td>
+        <td>{{x.time}}</td>
+        <td>
+ <button class="ui primary button" id="add" onclick="fun1()" >{{x.reply}}</button>
+</td>
+    </tr>
+</tbody>
+</table>
+         </div>
+     <div class="ui modal" id="modal1">
+<i class="close icon"></i>
+<div class="header">
+Sent Items
+</div>
+<div class="content">
+<div class="ui blue segment" id="segment" style="display: none">
+  <h4 class="ui header">Compose Mail</h4>
+<div class="column">
+<select class="ui selection dropdown"  id="group" ng-model="depts" ng-options="year for (year, depts) in examination">
+                    <option value=''>Select</option>
+                </select>
+            </div>
+            <div class="column">
+                <select class="ui selection dropdown"  id="admin" ng-disabled="!depts" ng-model="secs" ng-options="dept for (dept,sec) in depts"><option value=''>Select</option></select>
+            </div>
+<br>
+  <div class="ui fluid icon input">
+  <input type="text" placeholder="Subject"></div><br>
+  <textarea rows="10" cols="100" placeholder="type your message here..">
+  </textarea> <br>
+  <br>
+  <input type="file"><br>    
+<button class="ui button" id="button" style="margin-left: 700px;"><h5><b><i class="send icon"></i>Send</b></h5></button>
+ </div>
+</div>
+<div class="actions">
+<div class="ui green button">save</div>
+<div class="ui orange cancel button">close</div>
+</div>
+</div>
+     
+       </div>
+
+   <script type="text/javascript">
+        $('#group').dropdown();
+   $('#admin').dropdown();
+   
+      </script>
+   <script>
+  
+   function fun1()
+{
+        $('#modal1').modal('show');
+    
+}
+   
+   $('#export').click(function(){
+      $('.ui.floating.dropdown.icon.button').dropdown(); 
+   });
+   
+   $(document).ready(function() {
+       $('#example').DataTable();
+   } );
+  
+   
+</script>
+
+</body>
+</html>

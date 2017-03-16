@@ -1,0 +1,193 @@
+<html>
+<head>
+	<title></title>
+	
+	<link rel="stylesheet"  type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/sweetalert2/6.4.3/sweetalert2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/sweetalert2/6.4.3/sweetalert2.min.css">
+	<style type="text/css">
+		.ui.inverted.segment {
+ background-color:#337ab7;
+ }
+ .ui.form select {
+    display: block;
+    height: auto;
+    width: 430px;
+    margin: 6px;
+    background: #FFF;
+    border: 1px solid rgba(34,36,38,.15);
+    border-radius: .28571429rem;
+    box-shadow: 0 0 0 0 transparent inset;
+    padding: .62em 1em;
+    color: rgba(0,0,0,.87);
+    -webkit-transition: color .1s ease,border-color .1s ease;
+    transition: color .1s ease,border-color .1s ease;
+}
+.ui.form .field>label {
+    display: block;
+    margin: 0 0 .28571429rem 0;
+    color: rgba(0,0,0,.87);
+    font-size:15px;
+    font-weight: 700;
+    text-transform: none;
+}
+
+</style>
+<script>
+        $(document).ready(function() {
+        	$("#Send").click(function(){
+
+        		 swal({
+                        title: "Information",
+                        text: "You Registered successfully",
+                        type: "success",
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "OK...",
+                    },
+                    function() {
+                        swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                    });
+        });
+
+        	});
+            
+    </script>
+	
+	<script>
+        $(document).ready(function() {
+        	$("#Reset").click(function(){
+
+        		 swal({
+                        title: "Information",
+                        text: "You Registration is cancelled",
+                        type: "warning",
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "OK...",
+                       
+                    },
+                    function() {
+                        swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                    });
+        });
+
+        	});
+            
+    </script>
+	
+<script>
+
+	 $(document).ready(function() {
+        	$("#Clear").click(function(){
+
+        		 swal({
+                        title: "Information",
+                        text: "You Message Sent successfully",
+                        type: "success",
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "OK...",
+                    },
+                    function() {
+                        swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                    });
+        });
+
+        	});
+            
+    </script>
+	
+</head>
+<body>
+<br>
+
+<div class="ui inverted segment" class="ui grid">
+	<label> HOSTEL COMPLAINT REGISTER </label>
+</div>
+
+<form class="ui form segment">
+  <div class="three fields">
+  
+    <div class="field">
+      <label>Name</label>
+      <input placeholder=" Name" name="name" type="text">
+   </div>
+   
+    <div class="field">
+      <label>StudentId</label>
+      <input placeholder="Id" name="name" type="text">
+   </div>
+
+  <div class="field">
+	<label>Hostel</label>
+   <select class="ui dropdown">
+   <option value="">Select a Hostel</option>
+  <option value="0">Nri-1</option>
+  <option value="1">Nri-2</option>
+  <option value="2">pri-3</option>
+</select>
+  </div>
+  </div>
+   
+   <div class="inline fields">
+    <label> Complaining about?</label>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="frequency" checked="checked">
+        <label>Food</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="frequency">
+        <label>Water</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="frequency">
+        <label>Power</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="frequency">
+        <label>others</label>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="ui form">
+  <div class="three fields">
+   <div class="field">
+      <label>Complaint reasons</label>
+      <input type="text" placeholder="Resons">
+    </div>
+	
+    <div class="field">
+      <label>Facilities needed</label>
+      <input type="text" placeholder="Facilities">
+    </div>
+    <div class="field">
+      <label>Others</label>
+      <input type="text" placeholder="About others">
+    </div>
+</div>
+
+  <div class="inline field">
+    <div class="ui checkbox">
+      <input name="terms" type="checkbox">
+      <label>I agree that above information is true</label>
+    </div>
+  </div>
+    <center>
+  <div class="ui green submit button" id="Send">Send</div>
+  <div class="ui  blue reset button"id="Reset">Reset</div>
+  <div class="ui  red clear button"id="Clear">Clear</div>
+</form>
+</center>
+</div>
+
+</body>
+</html>

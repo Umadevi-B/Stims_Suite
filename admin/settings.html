@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+	<title>STIMS SUITE</title>
+	<link rel="stylesheet"  type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+	<link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css
+         " rel = "stylesheet">
+
+<link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
+<script src="script.js"></script>
+      <style type="text/css">
+    
+    .arrow-up{
+      width:0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right:5px solid transparent;
+      border-bottom:10px solid black;
+      display: inline-block;
+    }
+    .arrow-down{
+      width:0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right:5px solid transparent;
+      border-top:10px solid black;
+      display: inline-block;
+    }
+  
+       
+         h2{
+font-family:Times New Roman; 
+color:blue;
+	}
+
+	.ui.inverted.segment {
+ background-color:green;
+}
+         </style>
+</head>
+<body ng-controller="mycontroller" >
+<div class=" ui container">
+<h2> <pre> <i class="settings icon">  SETTINGS</i></pre></h2>
+<div class="ui inverted segment" class="ui grid">
+<div class="ui top attached tabular menu">
+  <a class="active item" data-tab="institution">INSTITUTION DETAILS</a>
+  <a class="item" data-tab="academic">ACADEMIC DETAILS</a>
+  <a class="item" data-tab="department">DEPARTMENT DETAILS</a>
+  
+</div>
+<!-- INSTITUTION DETAILS START-->
+<div class="ui bottom attached active tab segment" data-tab="institution">
+
+ <form class="ui form">
+  			<table class="ui green table">
+  				 <tr>
+  <div class="ui-grid">
+    <td>
+  	 <div class=" eight wide column">
+    <label>INSTITUTION NAME</label>
+     <input name="institution-name" type="text"  ng-model="clg.name" disabled >
+  </div></td>
+  <td>
+  <div class=" four wide column">
+  	<label>INSTITUTION CODE</label>
+    <input name="institution-code" type="text" ng-model="clg.code" disabled>
+  </div>
+  </td>
+  <td>
+  <div class=" four wide column">
+    <label>CONTACT PERSON</label>
+    <input name="first-name" type="text" ng-model="clg.contact_person" disabled>
+  </div>
+  </td>
+  </div>
+</tr>
+
+ <tr>
+  <div class="ui-grid">
+  <td>
+     <div class=" eight wide column">
+    <label>D.NO & STREET</label>
+     <input name="dno_street" type="text" ng-model="clg.dno_street" disabled >
+  </div></td>
+  <td>
+  <div class=" four wide column">
+    <label>CITY</label>
+    <input name="city" type="text" ng-model="clg.city" disabled >
+  </div>
+  </td>
+  <td>
+  <div class=" four wide column">
+    <label>STATE</label>
+    <input name="state" type="text" ng-model="clg.state" disabled>
+  </div>
+  </td>
+  </div>
+  </tr>
+ 
+ <tr>
+  <div class="ui-grid">
+  <td>
+     <div class=" eight wide column">
+    <label>COUNTRY</label>
+     <input name="country" type="text" ng-model="clg.country" disabled>
+  </div></td>
+  <td>
+  <div class=" four wide column">
+    <label>ZIPCODE</label>
+    <input name="zipcode" type="text" ng-model="clg.zipcode" disabled>
+  </div>
+  </td>
+  <td>
+  <div class=" four wide column">
+    <label>PHONE NUMBER</label>
+    <input name="phone" type="text" ng-model="clg.phone" disabled>
+  </div>
+  </td>
+  </div>
+  </tr>
+
+    <tr>
+  <div class="ui-grid">
+  <td>
+     <div class=" eight wide column">
+    <label>MOBILE</label>
+     <input name="mobile" type="text" ng-model="clg.mobile" disabled >
+  </div>
+  </td>
+  <td>
+  <div class=" four wide column">
+    <label>FAX NUMBER</label>
+    <input name="fax" type="text" ng-model="clg.faxno" disabled >
+  </div>
+  </td>
+  <td>
+  <div class=" four wide column">
+    <label>SCHOOL ESTABLISED ON</label>
+    <input name="schoolestablishedon" type="text" ng-model="clg.established_on" disabled >
+  </div>
+  </td>
+  </div>
+  </tr> 
+
+ <tr>
+  <div class="ui-grid">
+  <td>
+     <div class=" eight wide column">
+    <label>ACADEMIC YEAR FROM</label>
+     <input name="mobile" type="text" ng-model="clg.academic_year_from" disabled >
+  </div>
+  </td>
+  <td>
+  <div class=" four wide column">
+    <label>ACADEMIC YEAR TO</label>
+    <input name="fax" type="text" ng-model="clg.academic_year_to" disabled>
+  </div>
+  </td>
+  <td></td>
+    </div>
+  </tr> 
+  </table>
+</form>
+</div>
+
+<!-- INSTITUTION DETAILS END-->
+<!-- ACADEMIC DETAILS START-->
+<div class="ui bottom attached tab segment" data-tab="academic">
+<div class="ui input">
+  <input type="text" placeholder="search here " ng-model="searchtext"></div>
+	TABLE-SIZE:<div class="ui input"><input type="number" step="1" min="0" max="10" ng-model="rowLimit" ></div>
+<button class="ui inverted green button" onclick="fun3()">ADD ACADEMIC YEAR </button>
+ <table class="ui  striped  green table">
+<thead>
+<tr>
+
+<th ng-click="sortData('sno')">SNO<div ng-class="getsortclass('sno')"></div></th>
+  <th ng-click="sortData('Start_Month_Year')">START YEAR & MONTH<div ng-class="getsortclass('Start_Month_Year')"></div></th>
+  <th ng-click="sortData('END YEAR & MONTH')">END YEAR & MONTH<div ng-class="getsortclass('END YEAR & MONTH')"></div></th>
+  <th ng-click="sortData('Status')">STATUS<div ng-class="getsortclass('Status')"></div></th>
+  <th>OPTION</th> 
+</tr>
+</thead> 
+<tbody>
+    <tr ng-repeat = " x in academic|filter: searchtext| limitTo:rowLimit|orderBy:sortcol:reversesort">
+    <td>{{x.sno}}</td>
+    <td>{{x.Start_Month_Year}}</td>
+    <td>{{x.End_Month_Year}}</td>
+    <td>{{x.Status}}</td>
+    <td>
+    <button class="ui inverted green button" onclick="fun1()">EDIT</button>
+    <button class="ui inverted green button" onclick="fun2()">DELETE</button>
+    </td>
+    </tr>
+  </tbody>
+ </table>
+ <div id="TableView1" style="display: none">
+<div class="ui modal" id="modal1">
+<i class="close icon"></i>
+<div class="header">
+ACADEMIC
+</div>
+<div class="content">
+<div class="ui input" >
+<div ng-repeat="(header, value) in academic[0]">
+<label >{{header}}</label>
+  <input placeholder="{{value}}" type="text">
+</div>
+</div>
+</div>
+<div class="actions">
+<div class="ui green button">save</div>
+<div class="ui red cancel button">close</div>
+</div>
+</div>
+</div>
+<div id="TableView3" style="display: none"> 
+<div class="ui modal" id="modal3" >
+<i class="close icon"></i>
+<div class="header">
+DEPARTMENT
+</div>
+<div class="content">
+
+  <div class="ui calendar" id="example7">
+    <div class="ui input left icon">
+      <i class="time icon"></i>
+      <input type="text" placeholder="select Start_Month_Year">
+        </div>
+        </div>
+        <div class="ui calendar" id="example8">
+    <div class="ui input left icon">
+      <i class="time icon"></i>
+       <div class="ui input left icon">
+      <i class="time icon"></i>
+            <input type="text" placeholder="select End_Month_Year" >
+    </div>
+    </div>
+  </div>
+  <div class="ui input">
+           <input type="text" placeholder="Status">
+         </div>
+  </div>
+  <br/>
+
+<div class="actions">
+<div class="ui green button" id="add">add</div>
+<div class="ui red cancel button">close</div>
+</div>
+</div>
+</div> 
+</div>
+
+<!-- ACADEMIC DETAILS END-->
+<!-- DEPARTMENT DETAILS START -->
+
+<div class="ui bottom attached tab segment" data-tab="department">
+ <div class="ui input">
+  <input type="text" placeholder="search here " ng-model="searchtext"></div>
+	TABLE-SIZE:<div class="ui input"><input type="number" step="1" min="0" max="10" ng-model="rowLimit" ></div>
+<button class="ui inverted green button" onclick="fun6()">ADD DEPARTMENT</button>
+ <table class="ui striped  green table">
+<thead>
+<tr>
+
+<th ng-click="sortData('sno')">SNO<div ng-class="getsortclass('sno')"></div></th>
+  <th ng-click="sortData('dcode')">START YEAR & MONTH<div ng-class="getsortclass('dcode')"></div></th>
+  <th ng-click="sortData('dname')">END YEAR & MONTH<div ng-class="getsortclass('dname')"></div></th>
+  <th ng-click="sortData('dtype')">STATUS<div ng-class="getsortclass('dtype')"></div></th>
+  <th>OPTION</th> 
+</tr>
+</thead> 
+<tbody>
+    <tr ng-repeat = " x in dept|filter: searchtext| limitTo:rowLimit|orderBy:sortcol:reversesort">
+    <td>{{x.sno}}</td>
+    <td>{{x.dcode}}</td>
+    <td>{{x.dname}}</td>
+    <td>{{x.dtype}}</td>
+    <td>
+    <button class="ui inverted green button" onclick="fun4()">EDIT</button>
+    <button class="ui inverted green button" onclick="fun5()">DELETE</button>
+      
+    </td>
+    </tr>
+  </tbody>
+ </table>
+ <div id="TableView4" style="display: none">
+<div class="ui modal" id="modal4">
+<i class="close icon"></i>
+<div class="header">
+DEPARTMENT
+</div>
+<div class="content">
+<div class="ui input" >
+<div ng-repeat="(header, value) in dept[0]">
+<label >{{header}}</label>
+  <input placeholder="{{value}}" type="text">
+</div>
+</div>
+</div>
+<div class="actions">
+<div class="ui green button">save</div>
+<div class="ui red cancel button">close</div>
+</div>
+</div>
+</div>
+<div id="TableView6" style="display: none"> 
+<div class="ui modal" id="modal6" >
+<i class="close icon"></i>
+<div class="header">
+DEPARTMENT
+</div>
+<div class="content">
+<div class="ui input" >
+<div ng-repeat="(header, value) in dept[0]">
+<label></label>
+  <input placeholder="{{header}}" type="text">
+</div>
+</div>
+</div>
+<div class="actions">
+<div class="ui green button" id="add">add</div>
+<div class="ui red cancel button">close</div>
+</div>
+</div>
+</div> 
+</div>
+<!-- DEPARTMENT DETAILS END -->
+</div>
+</div>
+</body>
+<script>	
+      	$('.menu .item').tab();
+ </script>
+</html>

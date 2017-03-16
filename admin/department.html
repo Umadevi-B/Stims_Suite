@@ -1,0 +1,202 @@
+<head>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css" type="text/css">
+   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/dataTables.semanticui.min.css" type="text/css">
+   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+   <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+   <script src="https://cdn.datatables.net/1.10.13/js/dataTables.semanticui.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+   <script src="js/data.js"></script>
+
+    <!-- date links -->
+    <link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
+
+<!-- toggle -->
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+    <script src="https://cdn.jsdelivr.net/sweetalert2/6.4.3/sweetalert2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/sweetalert2/6.4.3/sweetalert2.min.css">
+    <script>
+     
+      $(document).ready(function() {
+         $("#viewDetails_1").click(function() {
+                $("#pusher1").toggle(500);
+         });
+         });
+ </script>
+
+    <script type="text/javascript">
+            function CountryCntrl($scope) {
+                $scope.examination = {
+                    '2015-2016': {
+                        'CLASS-1': ['A', 'B', 'C', 'D'],
+                        'CLASS-11': ['A', 'B', 'C'],
+                        'CLASS-111': ['A', 'B']
+                    },
+                    '2017-2018': {
+                        'CLASS-1V': ['NIL'],
+                        'CLASS-V': ['A', 'B'],
+                        'CLASS-VI': ['A', 'B']
+                    },
+                    '2018-2019': {
+                        'CLASS-VII': ['A'],
+                        'CLASS-VIII': ['B']
+                    }
+                };
+            }
+        </script>
+</head>
+<style>
+   .pusher{
+   padding-top: 60px;
+   }
+   .ui.teal.button, .ui.teal.buttons .button {
+    background-color:#2e6da4;
+    color: #FFF;
+    text-shadow: none;
+    background-image: none;
+}
+</style>
+<body ng-app="myApp">
+   <div ng-controller="CountryCntrl">
+   <h2> <pre> <i class="object ungroup icon"> Department Details</i></pre></h2>
+      <div class="ui grid">
+         <div class="doubling five column row">
+            <div class="column">
+               <select class="ui selection dropdown"  id="year" ng-model="depts" ng-options="year for (year, depts) in examination">
+                  <option value=''>Select Academic year</option>
+               </select>
+            </div>
+            <div class="column">
+               <select class="ui selection  dropdown"  id="dept" ng-disabled="!depts" ng-model="secs" ng-options="dept for (dept,sec) in depts">
+                  <option value=''>Select Dept type</option>
+               </select>
+            </div>
+            <div class="column">
+               <select class="ui selection dropdown"  id="sec" ng-disabled="!secs || !depts" ng-model="sec">
+                  <option value=''>Select Class</option>
+                  <option ng-repeat="sec in secs" value='{{sec}}'>{{sec}}</option>
+               </select>
+            </div>
+           
+  <div class="ui calendar" id="example2">
+    <div class="ui input left icon">
+      <i class="calendar icon"></i>
+      <input type="text" placeholder="Date">
+    </div>
+  </div> 
+    <div class="ui buttons">
+    <div class="ui primary button" id="viewDetails_1">show</div>
+    </div>
+ <script type="text/javascript">
+    $('#example2').calendar({
+  type: 'date'
+});
+ </script>
+ 
+         </div>
+      </div>
+      
+      <div class="pusher" id="pusher1" style="display: none">
+         <div class="ui container" ng-controller="books">
+            <h3 class="ui header" style="color:grey;">Activity Report</h3>
+            <div class="ui divider"></div>
+            <button class="ui blue button" id="add"><i class="plus icon"></i>Add New</button>
+            <div class="ui right floated teal buttons">
+               <div class="ui blue button">Export</div>
+               <div class="ui floating dropdown icon button" id="export">
+                  <i class="upload icon"></i>
+                  <div class="menu">
+                     <div class="item"><i class="External icon"></i> Excel</div>
+                     <div class="item"><i class="mail outline icon"></i> Mail</div>
+                     <div class="item"><i class="file icon"></i>Csv</div>
+                  </div>
+               </div>
+            </div>
+            <div class="ui hidden divider"></div>
+          
+            <table id="example" class="ui very compact celled blue table" cellspacing="0" width="100%" style="text-align: center">
+<thead>
+<tr >
+    <th ng-click="sortData('id')">ID<div ng-class="getsortclass('id')"></div></th>
+    <th ng-click="sortData('regno')">REGNO <div ng-class="getsortclass('regno')"></div></th>
+     <th ng-click="sortData('regno')">IMAGE <div ng-class="getsortclass('Image')"></div></th>
+    <th ng-click="sortData('name')">NAME <div ng-class="getsortclass('name')"></div></th>
+    <th ng-click="sortData('DOB')">D.O.B<div ng-class="getsortclass('DOB')"></div></th>
+    <th ng-click="sortData('gender')">GENDER<div ng-class="getsortclass('gender')"></div></th>
+    <th ng-click="sortData('Activity')">Activity<div ng-class="getsortclass('Activity')"></div></th>
+    <th ng-click="sortData('Action')">Action<div ng-class="getsortclass('Action')"></div></th>
+</tr>
+</thead>
+<tbody>
+
+<tr ng-repeat="x in employee| limitTo:rowLimit|orderBy:sortcol:reversesort">  
+
+        <td>{{x.id}}</td>
+        <td>{{x.regno }} </td>
+         <td><img ng-src="{{x.Image}}"  style="height:60px; width:60px" ></td>
+        <td>{{x.name | uppercase}} </td>
+        <td>{{x.DOB|date:"dd/MM/yyyy"}}</td>
+        <td>{{x.gender | lowercase}}</td>
+        <td>{{x.Activity}}</td>
+        <td><a class="label label-info ng-scope" ng-if="detail.SyllabusFilePath" href="Certificate_1.pdf" tooltip-placement="left" tooltip="certificate.pdf" download="" data-placement="top">View</a></td>
+    </tr>
+</tbody>
+</table>
+         </div>
+     
+      <div class="ui modal"  ng-controller="books">
+         <i class="close icon"></i>
+         <div class="header">
+            Add Report
+         </div>
+         <div class="content">
+            <div class="ui grid">
+               <div class="eight wide column" ng-repeat="(header, value) in names[0]">
+                  <div class="ui fluid input">
+                     <input type="text" id="{{ header }}" placeholder="{{ header }}">
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="actions">
+            <div class="actions">
+               
+               <div class="ui green approve button">
+                  <i class="checkmark icon"></i>
+                  Save
+               </div>
+               <div class="ui orange cancel button">
+                  <i class="remove icon"></i>
+                  Cancel
+               </div>
+            </div>
+         </div>
+      </div>
+       </div>
+   </div>
+   <script type="text/javascript">
+        $('#year').dropdown();
+   $('#dept').dropdown();
+   $('#sec').dropdown();
+      </script>
+   <script>
+  
+   
+   $('#add').click(function(){
+      $('.ui.modal').modal("show");
+   });
+   
+   $('#export').click(function(){
+      $('.ui.floating.dropdown.icon.button').dropdown(); 
+   });
+   
+   $(document).ready(function() {
+       $('#example').DataTable();
+   } );
+  
+   
+</script>
+
+</body>

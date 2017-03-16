@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Message</title>
+  <!-- dropdown link -->
+<script type="text/javascript" srsc="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
+<!-- semantic link -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css" type="text/css">
+<!-- toggle link -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet"  type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<style>
+	td{
+		padding:10px;
+  }
+</style>
+<script>
+  $(document).ready(function() {
+            $("#button").click(function() {
+                $("#segment").toggle(500);
+                 });
+        });
+</script>
+
+</head>
+   <body ng-controller="mycontroller">
+ <h2 style="margin-left: 50px; margin-top:50px; color:blue"> <pre> <i class="mail icon"> Message Details</i></pre></h2>
+ <div class="ui container">
+ <table width=100%>
+ <tr><td>
+ <button class="positive ui button" id="button">Compose</button></td>
+ <td>
+ <!-- <div class="ui left floated segment" id= "segment" style="margin-left: 50px, width: 500px, margin-top:100px; display: none" > -->
+
+<table  width=150% id= "segment" style="display: none">
+<tr><td>
+<h4> Compose Mail</h4></td></tr>
+<tr><td>
+  <div class="column">
+    <select class="ui selection dropdown" id="academic-select" ng-model="selectedacademic" ng-options="item.Id as item.name for item in admin">
+    <option value="">Select Group</option>
+</select>
+</div></td></tr><tr>
+            <td>
+            <div class="column"><select class="ui selection dropdown" id="dept-select" ng-model="selecteddept" ng-options="dept1.sno as dept1.dname for dept1 in name">
+    <option value="">Select Name</option>
+</select>  </div></td></tr>
+<tr><td>
+  
+<div class="ui input">
+  <input placeholder="Subject" type="text">
+</div>
+</td></tr>
+
+</table>
+ <!-- 	</div> -->
+ </td></tr>
+ <tr><td><div class="ui left floated segment" style="margin-left: 50px, margin-top:100px;">
+  <table id="view1">
+<tr><th> Folders</th></tr>
+<tr><td> <button class="ui primary basic button"><i class="mail icon"> </i> Inbox</button></td></tr>
+<tr><td> <button class="ui primary basic button"><i class="external icon"> </i>Sent</button></td></tr>
+<tr><td><button class="ui primary basic button"><i class="comment outline icon"> </i>Drafs</button></td></tr>
+<tr><td><button class="ui primary basic button"> <i class="trash icon"> </i>Trash</button></td></tr>
+  </table>
+  </div><td><tr>
+  </table>
+
+</div>
+<script>
+$('#academic-select').dropdown();
+$('#dept-select').dropdown();
+
+</script>
+<script type="text/javascript">
+          var app = angular.module('myApp', []);
+app.controller('mycontroller',['$scope',function($scope)
+{
+$scope.admin = [
+        {Id : 1, name : "Admin"},
+        {Id : 2, name : "Student"},
+        {Id : 3, name : "Teacher"},
+        {Id : 3, name : "Non Teaching Staffs"}
+    ];
+
+   var name=[{sno:1,dcode:"Ayisha",dname:"Ayisha",dtype:"Academic"},
+{sno:2,dcode:"it02",dname:"Samraj",dtype:"Academic"},
+{sno:3,dcode:"cse03",dname:"Prabu",dtype:"Academic"},
+{sno:4,dcode:"101",dname:"Nancy",dtype:"NonAcademic"}];
+
+$scope.name=name;
+    }]);
+        </script>
+       
+</body>
+</html>

@@ -1,0 +1,274 @@
+<html>
+<head>
+	<title></title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+    <script src="https://cdn.jsdelivr.net/sweetalert2/6.4.3/sweetalert2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/sweetalert2/6.4.3/sweetalert2.min.css">
+	<style type="text/css">
+		.ui.inverted.segment {
+ background-color:#337ab7;
+ }
+ .ui.form select {
+    display: block;
+    height: auto;
+    width: 200%;
+    margin: 6px;
+    background: #FFF;
+    border: 1px solid rgba(34,36,38,.15);
+    border-radius: .28571429rem;
+    box-shadow: 0 0 0 0 transparent inset;
+    padding: .62em 1em;
+    color: rgba(0,0,0,.87);
+    -webkit-transition: color .1s ease,border-color .1s ease;
+    transition: color .1s ease,border-color .1s ease;
+}
+
+.ui.form .field>label {
+    display: block;
+    margin: 0 0 .28571429rem 0;
+    color: rgba(0,0,0,.87);
+    font-size:15px;
+    font-weight: 700;
+    text-transform: none;
+}
+
+h2 {
+    font-size: 15px;
+}
+
+h3 {
+    font-size: 15px;
+}
+
+h4 {
+    font-size: 15px;
+}
+
+
+</style>
+ <script type="text/javascript">
+        $(document).ready(function() {
+        	$("#Save").click(function(){
+
+        		 swal({
+                        title: "Feedback",
+                        text: "The Details is saved",
+                        type: "success",
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "OK...",
+                    },
+                    function() {
+                        swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                    });
+        });
+
+        	});
+            
+    </script>
+	<script type="text/javascript">
+        $(document).ready(function() {
+        	$("#Cancel").click(function(){
+
+        		 swal({
+                        title: "Feedback",
+                        text: "Do you want to cancel",
+                        type: "warning",
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "Yes...",
+                    },
+                    function() {
+                        swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                    });
+        });
+
+        	});
+            
+    </script>
+	<script type="text/javascript">
+        $(document).ready(function() {
+        	$("#Sent").click(function(){
+
+        		 swal({
+                        title: "Feedback",
+                        text: "your Message is ready to sent",
+                        type: "success",
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "OK...",
+                    },
+                    function() {
+                        swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                    });
+        });
+
+        	});
+            
+    </script>
+</head>
+<body>
+<br>
+<div class="ui stacked segment">
+<div class="ui inverted segment" class="ui grid">
+	<label>Employee Registration</label>
+</div>
+
+<div class="ui-grid">
+   <div class="ui form">
+  <div class="three fields">
+    <div class="field">
+      <label>Name of the Employee</label>
+      <input type="text" placeholder="Name">
+    </div>
+    <div class="field">
+      <label>Phone Number</label>
+      <input type="text" placeholder="Phone Number">
+    </div>
+	 <div class="field">
+      <label>Email</label>
+      <input type="text" placeholder="Email">
+    </div>
+</div>
+
+
+  
+<div class="three fields">
+    <div class="field">
+    <h2>Date of Birth</h2>
+  <input type="date" name="Lfrom">
+</div>
+
+
+  <div class="field">
+      
+	 <h3> Address </h3>
+	  
+      <input type="text" placeholder=" Address ">
+    </div>
+	
+	<div class="field">
+    <h2>Zipcode</h2>
+  <input type="text" name="Zipcode">
+</div>
+
+	
+</div>
+
+
+<div class="ui-grid">
+  <div class="three fields">
+  <select class="ui search dropdown " >
+  <option value="">Gender</option>
+  <option value="">Male</option>
+  <option value="">Female</option>
+  <option value="">Others</option>
+  <select>
+  
+  <select class="ui search dropdown">
+  <option value="Guardian name">Select Religion</option>
+  <option value="">Hindu</option>
+   <option value="">Muslim</option>
+    <option value="">Christian</option>
+	<option value="Others">Others</option>
+  </select>
+  
+  <select class="ui search dropdown " >
+  <option value="">City</option>
+  <option value="">Tirupur</option>
+  <option value="">Erode</option>
+  <option value="">Others</option>
+  <select>
+  
+  </div>
+  
+  <div class="ui-grid">
+  <div class="three fields">
+  <select class="ui search dropdown">
+  <option value="Guardian name">State</option>
+  <option value="">TamilNadu</option>
+   <option value="">Mumbai</option>
+    <option value="">Andhra</option>
+	<option value="Others">Others</option>
+  </select>
+  
+  <select class="ui search dropdown">
+  <option value="" >Country</option>
+  <option value="">India</option>
+  <option value="">Bangaladesh</option>
+   <option value="">pakistan</option>
+	<option value="Others">Others</option>
+  </select> 
+  
+  <select class="ui search dropdown">
+  <option value="" >Select Degree</option>
+  <option value=""> B.TECH</option>
+  <option value="">B.E</option>
+   <option value="">MCA</option>
+	<option value="Others">Others</option>
+  </select>
+  
+  </div>
+  
+  <div class="ui-grid">
+  <div class="three fields">
+  <select class="ui search dropdown">
+  <option value="Guardian name">Job Details</option>
+  <option value="">Student</option>
+   <option value="">Teacher</option>
+    <option value="">Head</option>
+	<option value="">Labours</option>
+		<option value="">Others</option>
+  </select>
+  
+  <select class="ui search dropdown">
+  <option value="" >Job Details</option>
+  <option value="">Permanent</option>
+  <option value="">Contract</option>
+  </select> 
+  
+  <select class="ui search dropdown">
+  <option value="" >Bank Name</option>
+  <option value="">Punjab</option>
+  <option value="">Indian</option>
+   <option value="">State</option>
+	<option value="Others">Others</option>
+  </select>
+  
+  </div>
+  
+  <div class="three fields">
+   
+
+
+  <div class="field">
+      
+	 <h3> Account type</h3>
+	  
+      <input type="text" placeholder=" Address ">
+    </div>
+	
+	<div class="field">
+    <h2>Account Number</h2>
+  <input type="text" name="Zipcode">
+  </div>
+  
+   <div class="field">
+    <h2>Certificate Softcopy</h2>
+  <input type="file" name="myfile">
+</div>
+
+  </div>
+  
+<center>
+ <div class="ui green save button" id="Save">Save</div>
+  <div class="ui  red cancel button"id="Cancel">Cancel</div>
+  <div class="ui  blue sms button"id="Sent">Sent Sms</div>
+</center>
+</div>
+</div>
+</div>
+  </div>
+
+</body>
+</html>

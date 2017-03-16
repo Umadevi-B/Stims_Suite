@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+    <script src="https://cdn.jsdelivr.net/sweetalert2/6.4.3/sweetalert2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/sweetalert2/6.4.3/sweetalert2.min.css">
+	<style type="text/css">
+		.ui.inverted.segment {
+ background-color:#337ab7;
+ }
+ .ui.form select {
+    display: block;
+    height: auto;
+    width: 200%;
+    margin: 6px;
+    background: #FFF;
+    border: 1px solid rgba(34,36,38,.15);
+    border-radius: .28571429rem;
+    box-shadow: 0 0 0 0 transparent inset;
+    padding: .62em 1em;
+    color: rgba(0,0,0,.87);
+    -webkit-transition: color .1s ease,border-color .1s ease;
+    transition: color .1s ease,border-color .1s ease;
+}
+
+.ui.form .field>label {
+    display: block;
+    margin: 0 0 .28571429rem 0;
+    color: rgba(0,0,0,.87);
+    font-size:15px;
+    font-weight: 700;
+    text-transform: none;
+}
+
+h2 {
+    font-size: 15px;
+}
+
+h3 {
+    font-size: 15px;
+}
+
+h4 {
+    font-size: 15px;
+}
+
+
+</style>
+ <script type="text/javascript">
+        $(document).ready(function() {
+        	$("#Save").click(function(){
+
+        		 swal({
+                        title: "Feedback",
+                        text: "The Details is saved",
+                        type: "success",
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "OK...",
+                    },
+                    function() {
+                        swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                    });
+        });
+
+        	});
+            
+    </script>
+	<script type="text/javascript">
+        $(document).ready(function() {
+        	$("#Cancel").click(function(){
+
+        		 swal({
+                        title: "Feedback",
+                        text: "Do you want to cancel",
+                        type: "warning",
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "Yes...",
+                    },
+                    function() {
+                        swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                    });
+        });
+
+        	});
+            
+    </script>
+	<script type="text/javascript">
+        $(document).ready(function() {
+        	$("#Sent").click(function(){
+
+        		 swal({
+                        title: "Feedback",
+                        text: "your Message is ready to sent",
+                        type: "success",
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "OK...",
+                    },
+                    function() {
+                        swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                    });
+        });
+
+        	});
+            
+    </script>
+</head>
+<body>
+<br>
+<div class="ui stacked segment">
+<div class="ui inverted segment" class="ui grid">
+	<label>ATTENDENCE</label>
+</div>
+
+<div class="ui-grid">
+   <div class="ui form">
+  <div class="three fields">
+    <div class="field">
+      <label>Name of the student</label>
+      <input type="text" placeholder="Name">
+    </div>
+    <div class="field">
+      <label>Initial</label>
+      <input type="text" placeholder="Last Name">
+    </div>
+	 <div class="field">
+      <label>StudentId</label>
+      <input type="text" placeholder="StuId">
+    </div>
+</div>
+
+<div class="ui-grid">
+  <div class="two fields">
+  <select class="ui search dropdown " >
+  <option value="">College</option>
+  <option value="">Nec</option>
+  <option value="">Nct</option>
+  <option value="">Polytechnic</option>
+  <option value="">Pharmacy</option> 
+  <select>
+  
+  
+  
+  <select class="ui search dropdown">
+  <option value="Guardian name">Select Hostel blocks</option>
+  <option value="Mother">Boys</option>
+  <option value="Father">Nri-1</option>
+   <option value="Brother">Nri-2</option>
+    <option value="Others">Nri-3</option>
+	<option value="Others">Girls</option>
+	<option value="Others">Nri-4</option>
+	<option value="Others">Nri-5</option>
+	<option value="Others">Polytechnic</option>
+	<option value="Others">Nri-6</option>
+	<option value="Others">Nri-7</option>
+  </select>
+  
+  <select class="ui search dropdown">
+  <option value="Guardian name">Floor Details</option>
+  <option value="Mother">1st Floor</option>
+  <option value="Father">2nd Floor</option>
+   <option value="Brother">3rd Floor</option>
+    <option value="Others">Ground Floor</option>
+  </select>
+  
+      
+  </div>
+  
+<div class="three fields">
+    <div class="field">
+    <h2> Leave From</h2>
+  <input type="date" name="Lfrom">
+</div>
+
+ <div class="field">
+  <h3>Leave To</h3>
+  <input type="date" name="Lto">
+</div>
+
+  <div class="field">
+      
+	 <h3> Leave Dates </h3>
+	  
+      <input type="text" placeholder="Leave dates">
+    </div>
+	
+</div>
+
+<div class="ui-grid">
+   <div class="ui form">
+  <div class="four fields">
+	  <div class="field">
+      <label>Reason </label>
+      <input type="text" placeholder="Leave reason">
+    </div>
+    <div class="field">
+      <label>Number of days leave</label>
+      <input type="text" placeholder="ndl">
+    </div>
+    <div class="field">
+      <label>Guardian name</label>
+      <input type="text" placeholder="guardian name">
+    </div>
+	  <div class="field">
+      <label>Staff incharge </label>
+      <input type="text" placeholder="staff incharge">
+    </div>
+</div>
+</div>
+
+<div class="ui-grid">
+   <div class="ui form">
+  <div class="three fields">
+    <div class="field">
+      <label>Guardian phonenumber</label>
+      <input type="text" placeholder="Guardian pnum">
+    </div>
+	  <div class="field">
+      <label>Staff phonenumber </label>
+      <input type="text" placeholder="staff pnum">
+    </div>
+	<div class="field">
+      <label>Staff Email </label>
+      <input type="text" placeholder="staff email">
+    </div>
+</div>
+
+
+
+<center>
+ <div class="ui green save button" id="Save">Save</div>
+  <div class="ui  red cancel button"id="Cancel">Cancel</div>
+  <div class="ui  blue sms button"id="Sent">Sent Sms</div>
+</center>
+</div>
+</div>
+</div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,223 @@
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" 
+href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+    <script src="https://cdn.jsdelivr.net/sweetalert2/6.4.3/sweetalert2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/sweetalert2/6.4.3/sweetalert2.min.css">
+	<style type="text/css">
+		.ui.inverted.segment {
+ background-color:#337ab7;
+ border-color:#2e6da4;
+ }
+ .ui.form select {
+    display: block;
+    height: auto;
+    width: 150%;
+    margin: 6px;
+    background: #FFF;
+    border: 1px solid rgba(34,36,38,.15);
+    border-radius: .28571429rem;
+    box-shadow: 0 0 0 0 transparent inset;
+    padding: .62em 1em;
+    color: rgba(0,0,0,.87);
+    -webkit-transition: color .1s ease,border-color .1s ease;
+    transition: color .1s ease,border-color .1s ease;
+}
+.ui.form .field>label {
+    display: block;
+    margin: 0 0 .28571429rem 0;
+    color: rgba(0,0,0,.87);
+    font-size:15px;
+    font-weight: 700;
+    text-transform: none;
+}
+
+</style>
+
+<script>
+        $(document).ready(function() {
+        	$("#save").click(function(){
+
+        		 swal({
+                        title: "Information",
+                        text: "You Registered successfully",
+                        type: "success",
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "OK...",
+                    },
+                    function() {
+                        swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                    });
+        });
+
+        	});
+            
+    </script>
+	
+	<script>
+        $(document).ready(function() {
+        	$("#cancel").click(function(){
+
+        		 swal({
+                        title: "Information",
+                        text: "You Registration is cancelled",
+                        type: "warning",
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "OK...",
+                       
+                    },
+                    function() {
+                        swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                    });
+        });
+
+        	});
+            
+    </script>
+
+</head>
+<body>
+<br>
+<div class="container">
+<div class="ui inverted segment" class="ui grid">
+	<label> HOSTEL REGISTRATION </label>
+</div>
+
+<div class="ui-grid">
+   <div class="ui form">
+  <div class="three fields">
+   <div class="field">
+      <label>Name</label>
+      <input type="text" placeholder=" Name" style="width:378px;height:35px;">
+    </div>
+	
+    <div class="field">
+      <label>Father name</label>
+      <input type="text" placeholder="Father name" style="width:378px;height:35px;">
+    </div>
+    <div class="field">
+      <label>Mother name</label>
+      <input type="text" placeholder="Mother Name" style="width:378px;height:35px;">
+    </div>
+</div>
+
+<div class="ui-grid">
+  <div class="Four fields">
+   <select class="ui search dropdown " >
+  <option value="">Select your college.</option>
+  <option value="">Nec</option>
+  <option value="">Nct</option>
+  <option value="">Polytechnic</option>
+  <select>
+  
+  <select class="ui search dropdown " >
+  <option value="">Gender</option>
+  <option value="">Male</option>
+  <option value="">Female</option>
+  <option value="">Others</option>
+  <select>
+  
+  <select class="ui search dropdown">
+  <option value="Guardian name">Select your Department</option>
+  <option value="Mother">MECH</option>
+  <option value="Father">IT</option>
+   <option value="Brother">EEE</option>
+    <option value="Others">ECE</option>
+  <select>
+  
+  
+  <select class="ui search dropdown " >
+  <option value="">Select your Hostel.</option>
+  <option value="">Boys</option>
+  <option value="">Girls</option>
+  <option value="">Others</option>
+  <select>
+  
+  </div>
+  </div>
+  
+  
+  <div class="ui-grid">
+  <div class="four fields">
+   
+  
+  <select class="ui search dropdown">
+  <option value="Guardian name">Select Hostel blocks</option>
+  <option value="Mother">Boys</option>
+  <option value="Father">Nri-1</option>
+   <option value="Brother">Nri-2</option>
+    <option value="Others">Nri-3</option>
+	<option value="Others">Girls</option>
+	<option value="Others">Nri-4</option>
+	<option value="Others">Nri-5</option>
+	<option value="Others">Polytechnic</option>
+	<option value="Others">Nri-6</option>
+	<option value="Others">Nri-7</option>
+  <select>
+  
+ 
+   <select class="ui search dropdown " >
+  <option value="">Select the room type you want.</option>
+  <option value="">2 per Room</option>
+  <option value="">4 Per Room</option>
+  <option value="">8 Per Room</option>
+  <select>
+  
+  <select class="ui search dropdown">
+  <option value="Guardian name">Foot Status</option>
+  <option value="Mother">With food(RS.3500)</option>
+  <option value="Father">Without food(RS.1500)</option>
+  <select>
+  
+    <select class="ui search dropdown">
+  <option value="Guardian name">Guardian</option>
+  <option value="Mother">Mother</option>
+  <option value="Father">Father</option>
+   <option value="Brother">Brother</option>
+    <option value="Others">Others</option>
+  <select>
+  
+  </div>
+  </div>
+ 
+  
+<div class="ui-grid">
+
+  <div class="Three fields">
+        <div class="field">
+      <label>Guardian name</label>
+      <input type="text" placeholder="Guardian Name" style="width:378px;height:35px;">
+    </div>
+	
+    <div class="field">
+      <label>Guardian Phone number</label>
+      <input type="text" placeholder="Phone number" style="width:378px;height:35px;">
+    </div>
+	
+    <div class="field">
+      <label>Guardian Email</label>
+      <input type="text" placeholder="Email" style="width:378px;height:35px;">
+    </div>
+</div> 
+</div>
+<center>
+<button class="ui green button" id="save")>
+  Save
+</button>
+<button class="ui red button" id="cancel">
+  Cancel
+</button>
+
+</center>
+</div>
+
+</div>
+  </div>
+</div>
+</body>
+</html>
